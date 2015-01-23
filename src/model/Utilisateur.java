@@ -22,7 +22,7 @@ public class Utilisateur implements Serializable {
 
 	private String mail;
 
-	private int motDePasse;
+	private String motDePasse;
 
 	//bi-directional many-to-one association to Image
 	@OneToMany(mappedBy="utilisateur")
@@ -31,6 +31,11 @@ public class Utilisateur implements Serializable {
 	public Utilisateur() {
 	}
 
+	public Utilisateur(String mail, String mdp) {
+		this.mail = mail;
+		this.motDePasse = mdp;
+	}
+	
 	public int getCodeUtilisateur() {
 		return this.codeUtilisateur;
 	}
@@ -55,11 +60,11 @@ public class Utilisateur implements Serializable {
 		this.mail = mail;
 	}
 
-	public int getMotDePasse() {
+	public String getMotDePasse() {
 		return this.motDePasse;
 	}
 
-	public void setMotDePasse(int motDePasse) {
+	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
 	}
 

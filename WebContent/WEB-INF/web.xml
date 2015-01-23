@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>FreeArt</display-name>
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>accueil.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>AccueilServlet</servlet-name>
+    <servlet-class>servlets.AccueilServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccueilServlet</servlet-name>
+    <url-pattern>/Accueil/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ConsultationServlet</servlet-name>
+    <servlet-class>servlets.ConsultationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConsultationServlet</servlet-name>
+    <url-pattern>/Gallerie/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InscriptionServlet</servlet-name>
+    <servlet-class>servlets.InscriptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InscriptionServlet</servlet-name>
+    <url-pattern>/Inscription/*</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>ConnexionServlet</servlet-name>
+  	<servlet-class>servlets.ConnexionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ConnexionServlet</servlet-name>
+  	<url-pattern>/Connexion/*</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

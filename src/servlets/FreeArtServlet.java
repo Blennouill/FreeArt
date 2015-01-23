@@ -15,7 +15,7 @@ import outil.ConstanteFreeArt;
  * Servlet implementation class FreeArtServlet.
  * Point d'entrée de l'application web
  */
-@WebServlet("/FreeArtServlet")
+@WebServlet(name = "FreeArtServlet")
 public class FreeArtServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,14 +28,28 @@ public class FreeArtServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest poRequest, HttpServletResponse poResponse)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doGet(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
+		//->Déclaration des variables
+		RequestDispatcher loRequestDispatcher = poRequest.getRequestDispatcher("/error404.html");
+		//->Traitement de la fonction
+		// le paramètre action permet de savoir ce qu'il faut faire
+		try{
+			// redirection de la requête
+			
+			loRequestDispatcher.forward(poRequest, poResponse);
+		}
+		catch (ServletException se) {
+			System.out.println(se.toString());
+		}
+		catch (IOException ioe){
+			System.out.println(ioe.toString());
+		}
 	}
 
 	/** Fonction répondant aux requêtes de type post
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest poRequest, HttpServletResponse poResponse)
 	 */
 	protected void doPost(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
 		//->Déclaration des variables
@@ -60,6 +74,7 @@ public class FreeArtServlet extends HttpServlet {
 					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_PANIER);
 					break;
 				default:
+					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_ACCUEIL);
 					break;
 				
 			}

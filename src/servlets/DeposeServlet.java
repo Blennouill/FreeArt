@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class DeposeServlet
  */
-@WebServlet("/DeposeServlet")
+@WebServlet(name = "DeposeServlet")
 public class DeposeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

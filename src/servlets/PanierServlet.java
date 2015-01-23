@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PanierServlet
  */
-@WebServlet("/PanierServlet")
+@WebServlet(name = "PanierServlet")
 public class PanierServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

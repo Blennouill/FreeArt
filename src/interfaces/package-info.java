@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author Pro
- *
- */
-package interfaces;

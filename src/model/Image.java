@@ -18,6 +18,8 @@ public class Image implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int codeImage;
 
+	private String chemin;
+
 	private Timestamp datePublication;
 
 	private String nomCategorie;
@@ -40,6 +42,14 @@ public class Image implements Serializable {
 
 	public void setCodeImage(int codeImage) {
 		this.codeImage = codeImage;
+	}
+
+	public String getChemin() {
+		return this.chemin;
+	}
+
+	public void setChemin(String chemin) {
+		this.chemin = chemin;
 	}
 
 	public Timestamp getDatePublication() {
