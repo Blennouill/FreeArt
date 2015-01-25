@@ -9,20 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import outil.ConstanteFreeArt;
-import service.UtilisateurService;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * Servlet implementation class InscriptionServlet
+ * Servlet implementation class AccueilServlet
  */
-@WebServlet(name = "InscriptionServlet")
-public class InscriptionServlet extends HttpServlet {
-	
+@WebServlet(name = "AccueilServlet")
+public class AccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InscriptionServlet() {
+    public AccueilServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,21 +30,14 @@ public class InscriptionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_INSCRIPTION).forward( request, response );
+		this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( request, response );
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Déclaration des variables
-		UtilisateurService loUtilisateurService;
-		// Initialisation ds variables
-		String action = request.getParameter("action");
-		// Traitement de la fonction
-		if (action.compareTo("inscription") == 0){
-			loUtilisateurService = new UtilisateurService();
-			loUtilisateurService.CreationUtilisateur(request.getParameter("MailUtilisateur").toString(), request.getParameter("MotDePasse").toString());
-		}
+		throw new NotImplementedException();
 	}
+
 }

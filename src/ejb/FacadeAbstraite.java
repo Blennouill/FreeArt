@@ -51,7 +51,7 @@ public abstract class FacadeAbstraite<T> {
 	public void remove(T entite) {
 		getEntityManager().remove(getEntityManager().merge(entite));
 	}
-
+	
 	/**
 	 * Méthode de recherche d'un objet à partir de son identifiant.
 	 * 
