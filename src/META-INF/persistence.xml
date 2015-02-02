@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="FreeArt">
+	<persistence-unit name="FreeArtDB">
+		<jta-data-source>FreeArtDB</jta-data-source>
 		<class>model.Image</class>
+		<class>model.Panier</class>
+		<class>model.PanierPK</class>
 		<class>model.Utilisateur</class>
-		<class>model.Visiteur</class>
+		<properties>
+	        <property name="javax.persistence.schema-generation.create-database-schemas" value="true"/>
+	        <property name="eclipselink.logging.level.ejb" value="FINEST"/>
+	        <property name="eclipselink.logging.level.sql" value="FINEST"/>
+	        <property name="eclipselink.logging.level.query" value="FINEST"/>
+	        <property name="eclipselink.logging.level.transaction" value="FINEST"/>
+	        <property name="eclipselink.logging.level.connection" value="FINEST"/>
+	        <property name="eclipselink.logging.level.cache" value="FINEST"/>
+	        <property name="eclipselink.logging.level.jpa" value="FINEST"/>
+	        <property name="eclipselink.logging.level.ddl" value="FINEST"/>
+        </properties>
 	</persistence-unit>
 </persistence>

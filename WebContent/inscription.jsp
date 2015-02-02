@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp" %>
-
+<section class="section_light">
 <div class="center row">
     <div class="large-6 columns">
       <div class="content" data-section-content>
@@ -18,7 +18,7 @@
                   </div>
                   <div class="row collapse">
                     <div class="small-12 columns ">
-                      <input name="MotDePasse" type="text" placeholder="Password">
+                      <input name="MotDePasse" type="password" type="text" placeholder="Password">
                     </div>
                   </div>
                   <input type="hidden" name="action" value="inscription"/> 
@@ -33,3 +33,4 @@
       </div>
     </div>
    </div>
+   </section>

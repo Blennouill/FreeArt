@@ -11,7 +11,7 @@ import model.Image;
  */
 @Stateless
 public class FacadeImage extends FacadeAbstraite {
-	@PersistenceContext(unitName = "FreeArt")
+	@PersistenceContext(unitName = "FreeArtDB")
 	private EntityManager em;
 
 	protected EntityManager getEntityManager() {

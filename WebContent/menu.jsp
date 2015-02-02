@@ -15,16 +15,18 @@
 	</div>
 	<div class="two columns">
 		<%-- Vérification de la présence d'un objet utilisateur en session --%>
-	    <c:if test="${!empty sessionScope.sessionUtilisateur}">
-	        <%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
-	        <p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.email}</p>
-	    </c:if>
-	    <c:else>
-			<p style="margin: 6px 0">
-				<a href="Inscription" class="button radius">S'inscrire !</a> 
-				<a href="Connexion" class="button secondary radius">Se connecter !</a>
-	        </p>
-	    </c:else>
+		<c:choose>
+			<c:when test="${!empty sessionScope.SessionUtilisateur}">
+				<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
+				<p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.SessionUtilisateur.email}</p>
+			</c:when>
+			<c:otherwise>
+				<p style="margin: 6px 0">
+					<a href="Inscription" class="button radius">S'inscrire !</a> 
+					<a href="Connexion" class="button secondary radius">Se connecter !</a>
+				</p>
+			</c:otherwise>
+		</c:choose>
    	</div>
 </div> 
 </nav>

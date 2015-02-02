@@ -5,30 +5,41 @@ import java.util.HashMap;
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
-import outil.ConstanteFreeArt;
 import model.Utilisateur;
+import outil.ConstanteFreeArt;
 import ejb.FacadeUtilisateur;
 
 public class UtilisateurService {
 
-	@EJB
-	private FacadeUtilisateur facadeUtilisateur;
 	private String messageResultat;
     private HashMap<String, String> listeErreurs = new HashMap<String, String>();
     
     public UtilisateurService(){
-    	
     }
     
+    /**
+     * 
+     * @return
+     */
     public String getResultat() {
         return messageResultat;
     }
     
+    /**
+     * 
+     * @return
+     */
     public HashMap<String, String> getErreurs() {
         return listeErreurs;
     }
     
-    public Utilisateur ConnexionUtilisateur(HttpServletRequest poRequest) {
+    /**
+     * 
+     * @param poRequest
+     * @param fu
+     * @return
+     */
+    public Utilisateur ConnexionUtilisateur(HttpServletRequest poRequest, FacadeUtilisateur fu) {
         /* Récupération des champs du formulaire */
         String email = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_EMAIL);
         String motDePasse = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_MDP);
@@ -47,11 +58,12 @@ public class UtilisateurService {
         
         /* Initialisation du résultat global de la validation. */
         if ( listeErreurs.isEmpty() ) {
-            messageResultat = "Succès de la connexion.";
+        	return fu.findForConnection(email, motDePasse);
+            
         } else {
             messageResultat = "Échec de la connexion.";
+            return null;
         }
-        return facadeUtilisateur.find(email, motDePasse);
     }
     
     /**
@@ -59,14 +71,18 @@ public class UtilisateurService {
      * @param mail
      * @param motDePasse
      */
-	public boolean CreationUtilisateur(String mail, String motDePasse){
-		Utilisateur u = new Utilisateur(mail, motDePasse);
-		facadeUtilisateur.create(u);
+	public boolean CreationUtilisateur(FacadeUtilisateur fu, String mail, String motDePasse){
+		Utilisateur u = new Utilisateur();
+		u.setMail(mail);
+		u.setMotdepasse(motDePasse);
+		fu.create(u);
 		return true;
 	}
 	
     /**
      * Valide l'adresse email saisie.
+     * @param email
+     * @throws Exception
      */
     private void validationEmail( String email ) throws Exception {
         if ( email != null) {
@@ -77,8 +93,11 @@ public class UtilisateurService {
             throw new Exception("Merci de saisir votre mail.");
         }
     }
+    
     /**
      * Valide le mot de passe saisi.
+     * @param motDePasse
+     * @throws Exception
      */
     private void validationMotDePasse( String motDePasse ) throws Exception {
         if ( motDePasse != null ) {
@@ -90,16 +109,21 @@ public class UtilisateurService {
         }
     }
 
-    /*
+    /**
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+     * @param pChamp
+     * @param pMessage
      */
     private void setErreur( String pChamp, String pMessage ) {
         listeErreurs.put( pChamp, pMessage );
     }
 
-    /*
+    /**
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
+     * @param poRequest
+     * @param pNomChamp
+     * @return
      */
     private static String getValeurChamp( HttpServletRequest poRequest, String pNomChamp ) {
         String valeur = poRequest.getParameter( pNomChamp );

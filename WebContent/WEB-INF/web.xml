@@ -20,21 +20,12 @@
     <url-pattern>/Gallerie/*</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>InscriptionServlet</servlet-name>
-    <servlet-class>servlets.InscriptionServlet</servlet-class>
+    <servlet-name>UtilisateurServlet</servlet-name>
+    <servlet-class>servlets.UtilisateurServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>InscriptionServlet</servlet-name>
+    <servlet-name>UtilisateurServlet</servlet-name>
+    <url-pattern>/Connexion/*</url-pattern>
     <url-pattern>/Inscription/*</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
-  	<servlet-name>ConnexionServlet</servlet-name>
-  	<servlet-class>servlets.ConnexionServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>ConnexionServlet</servlet-name>
-  	<url-pattern>/Connexion/*</url-pattern>
-  </servlet-mapping>
-  
 </web-app>

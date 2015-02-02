@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import outil.ConstanteFreeArt;
+import service.ImageService;
+import service.UtilisateurService;
 
 /**
  * Servlet implementation class ConsultationServlet
@@ -26,9 +28,17 @@ public class ConsultationServlet extends HttpServlet {
     }
 
 	/**
+	 * Utiliser pour les appels via le menu
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Declaration des variables
+		UtilisateurService us = new UtilisateurService();
+		ImageService is = new ImageService();
+		// Traitement de la fonction
+		// -> Chargement des images
+		is.ListeImages();
+		this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_GALLERIE).forward( request, response );
 	}
 
 	/**
