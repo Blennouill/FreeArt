@@ -7,3 +7,4 @@ http://miageprojet2.unice.fr/Master_MIAGE_1/Applications_Web/TP7_Applications_we
 http://blog.paumard.org/cours/jpa/chap06-requetes-definition.html
 http://igm.univ-mlv.fr/~dr/XPOSE2007/acollign_ORM-JPA/jpa-tech2.html
 http://www.tutorialspoint.com/jsp/jstl_core_if_tag.htm
+http://openclassrooms.com/courses/creez-votre-application-web-avec-java-ee/formulaires-l-envoi-de-fichiers
