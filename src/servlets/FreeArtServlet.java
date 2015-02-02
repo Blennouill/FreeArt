@@ -62,13 +62,13 @@ public class FreeArtServlet extends HttpServlet {
 			// le contrôleur principal redirige la requête vers la servlet gérant l'action à réaliser
 			switch (lstrTypeAction){
 				case "1":
-					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_CONSULTATION);
+					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_GALLERIE);
 					break;
 				case "2":
-					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_DEPOSE);
+					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_UPLOAD);
 					break;
 				case "3":
-					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_INSCRIPTION);
+					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_UTILISATEUR);
 					break;
 				case "4":
 					loRequestDispatcher = poRequest.getRequestDispatcher(ConstanteFreeArt.CONSTANTE_NOM_SERVLET_PANIER);

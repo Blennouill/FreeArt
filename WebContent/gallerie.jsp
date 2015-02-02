@@ -1,10 +1,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp" %>
 
-<div style="clear: both"></div>        
+<!-- ######################## Corps ######################## --> 
+
+<section class="section_dark">
+	<form method="post" action="Gallerie/Upload" enctype="multipart/form-data">>
+	  <fieldset>
+	    <label>Uploader une image ! <input type="file" name="Upload"></label>
+	      <input type="submit" class="round button" value="Choisir"/>
+	  </fieldset>
+	</form>
+</section>
+
+<section class="section_light"><div style="clear: both"></div>        
 	<div class="twelve columns">
 		<div id="container">
-		<c:forEach var="image" items="${images}">
+		<c:forEach var="image" items="${ListeImages}">
 			<!-- photo -->
 			<div class='box photo col2'>
 				<a href="#"><c:out <img src="${image.chemin}" alt="desc" /> /></a>
@@ -13,10 +24,10 @@
 			</div>
 		</c:forEach>
 		</div> <!-- end Masonry container -->
-        
     </div>
-<!-- ######################## Scripts ######################## --> 
+</section>
 
+<!-- ######################## Scripts ######################## --> 
 
 	<!-- end page wrap) -->
 	<!-- Included JS Files (Compressed) -->

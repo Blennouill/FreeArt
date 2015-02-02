@@ -3,6 +3,7 @@ package service;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
@@ -47,21 +48,32 @@ public class ImageService {
 		return true;
 	}
 	
-	/*public ArrayList<Image> ListeImages(){
+	/**
+	 * 
+	 * @param fi
+	 * @return
+	 */
+	public List ListeImages(FacadeImage fi){
 		//Declaration des variables
-		ArrayList<Image> ListeImages = new ArrayList<Image>();
-	}*/
+		//Traitement de la fonction
+		return fi.findAll();
+	}
 
-    /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-     */
+	/**
+	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+	 * @param pChamp
+	 * @param pMessage
+	 */
     private void setErreur( String pChamp, String pMessage ) {
         listeErreurs.put( pChamp, pMessage );
     }
 
-    /*
+    /**
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
+     * @param poRequest
+     * @param pNomChamp
+     * @return
      */
     private static String getValeurChamp( HttpServletRequest poRequest, String pNomChamp ) {
         String valeur = poRequest.getParameter( pNomChamp );

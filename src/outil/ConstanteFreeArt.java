@@ -8,9 +8,9 @@ package outil;
 public final class ConstanteFreeArt {
 
 	// Nom des différents servlet pour les redirections du servlet principal
-	public static final String CONSTANTE_NOM_SERVLET_CONSULTATION = "/ConsultationServlet";
-	public static final String CONSTANTE_NOM_SERVLET_DEPOSE = "/DeposeServlet";
-	public static final String CONSTANTE_NOM_SERVLET_INSCRIPTION = "/InscriptionServlet";
+	public static final String CONSTANTE_NOM_SERVLET_GALLERIE = "/GallerieServlet";
+	public static final String CONSTANTE_NOM_SERVLET_UPLOAD = "/UploadServlet";
+	public static final String CONSTANTE_NOM_SERVLET_UTILISATEUR = "/UtilisateurServlet";
 	public static final String CONSTANTE_NOM_SERVLET_PANIER = "/PanierServlet";
 	public static final String CONSTANTE_NOM_SERVLET_ACCUEIL= "/AccueilServlet";
 	
@@ -23,7 +23,7 @@ public final class ConstanteFreeArt {
 	
 	// Constante liés aux utilisateurs
 	public static final String CONSTANTE_SESSION_UTILISATEUR = "SessionUtilisateur";
-	public static final String CONSTANTE_FORM_CHAMP_EMAIL = "MailUtilisateur";
+	public static final String CONSTANTE_FORM_CHAMP_NOM = "NomUtilisateur";
 	public static final String CONSTANTE_FORM_CHAMP_MDP = "MotDePasse";
 	
 	// Constante liés aux images

@@ -54,10 +54,12 @@ public class UtilisateurServlet extends HttpServlet {
 		// Traitement de la fonction
 		switch(poRequest.getServletPath()){
 		case "/Connexion":
-			Connexion(poRequest, poResponse);
+			if(Connexion(poRequest, poResponse))
+				this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( poRequest, poResponse );
 			break;
 		case "/Inscription":
-			Inscription(poRequest, poResponse);
+			if (Inscription(poRequest, poResponse))
+				this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( poRequest, poResponse );
 			break;	
 		}
 	}
@@ -67,7 +69,7 @@ public class UtilisateurServlet extends HttpServlet {
 	 * @param poRequest
 	 * @param poResponse
 	 */
-	private void Connexion(HttpServletRequest poRequest, HttpServletResponse poResponse){
+	private boolean Connexion(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException{
 		// Declaration de variables
 		HttpSession loSession;
 		UtilisateurService loUtilisateurService;
@@ -85,16 +87,10 @@ public class UtilisateurServlet extends HttpServlet {
 	        } else {
 	            loSession.setAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR, null);
 	        }
+	        return true;
 		}
 		else{
-		}
-	    // Attribution
-		try {
-			this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( poRequest, poResponse );
-		} catch (ServletException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+			return false;
 		}
 	}
 	
@@ -103,7 +99,7 @@ public class UtilisateurServlet extends HttpServlet {
 	 * @param poRequest
 	 * @param poResponse
 	 */
-	private void Inscription(HttpServletRequest poRequest, HttpServletResponse poResponse){
+	private boolean Inscription(HttpServletRequest poRequest, HttpServletResponse poResponse){
 		// Déclaration des variables
 		UtilisateurService loUtilisateurService;
 		// Initialisation ds variables
@@ -111,7 +107,11 @@ public class UtilisateurServlet extends HttpServlet {
 		// Traitement de la fonction
 		if (action.compareTo("inscription") == 0){
 			loUtilisateurService = new UtilisateurService();
-			loUtilisateurService.CreationUtilisateur(facadeUtilisateur, poRequest.getParameter("MailUtilisateur").toString(), poRequest.getParameter("MotDePasse").toString());
+			return loUtilisateurService.CreationUtilisateur(facadeUtilisateur, 
+														poRequest.getParameter(ConstanteFreeArt.CONSTANTE_FORM_CHAMP_NOM).toString(), 
+														poRequest.getParameter(ConstanteFreeArt.CONSTANTE_FORM_CHAMP_MDP).toString());
 		}
+		else
+			return false;
 	}
 }

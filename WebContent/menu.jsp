@@ -18,7 +18,7 @@
 		<c:choose>
 			<c:when test="${!empty sessionScope.SessionUtilisateur}">
 				<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
-				<p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.SessionUtilisateur.email}</p>
+				<p class="succes">Bonjour ${sessionScope.SessionUtilisateur.nomUtilisateur}</p>
 			</c:when>
 			<c:otherwise>
 				<p style="margin: 6px 0">

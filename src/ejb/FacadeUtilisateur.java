@@ -1,6 +1,7 @@
  package ejb;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -35,13 +36,13 @@ public class FacadeUtilisateur extends FacadeAbstraite {
 	 */
 	public Utilisateur findForConnection(String mail, String mdp) {
 		// Declaration des variables
-		ArrayList<Utilisateur> lUsers = new ArrayList<Utilisateur>();
+		List<Utilisateur> lUsers;
 		
 		Query query = em.createNamedQuery("Utilisateur.FindForConnection");
-		query.setParameter("mail", mail) ;
+		query.setParameter("nom", mail) ;
 		query.setParameter("mdp", mdp) ;
 
-		lUsers = (ArrayList<Utilisateur>) query.getResultList();
+		lUsers = query.getResultList();
 		
 		return lUsers.get(0);
 	}

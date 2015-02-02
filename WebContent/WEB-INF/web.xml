@@ -3,6 +3,7 @@
   <welcome-file-list>
     <welcome-file>accueil.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <servlet-name>AccueilServlet</servlet-name>
     <servlet-class>servlets.AccueilServlet</servlet-class>
@@ -11,14 +12,35 @@
     <servlet-name>AccueilServlet</servlet-name>
     <url-pattern>/Accueil/*</url-pattern>
   </servlet-mapping>
+  
   <servlet>
-    <servlet-name>ConsultationServlet</servlet-name>
-    <servlet-class>servlets.ConsultationServlet</servlet-class>
+    <servlet-name>GallerieServlet</servlet-name>
+    <servlet-class>servlets.GallerieServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ConsultationServlet</servlet-name>
+    <servlet-name>GallerieServlet</servlet-name>
     <url-pattern>/Gallerie/*</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>servlets.UploadServlet</servlet-class>
+    <init-param>
+		<param-name>Chemin</param-name> 
+		<param-value>/RessourcesImages/</param-value> 
+	</init-param>
+    <multipart-config>
+		<location>D:/Privee/Projet/P52/tmp</location>
+		<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+		<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+		<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+	</multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/Gallerie/Upload</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>UtilisateurServlet</servlet-name>
     <servlet-class>servlets.UtilisateurServlet</servlet-class>

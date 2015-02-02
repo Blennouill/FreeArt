@@ -13,12 +13,12 @@
                 <fieldset>
                   <div class="row collapse">
                     <div class="small-12  columns">
-                      <input name="MailUtilisateur" type="text" placeholder="Email">
+                      <input name="NomUtilisateur" type="text" placeholder="Email" required>
                     </div>
                   </div>
                   <div class="row collapse">
                     <div class="small-12 columns ">
-                      <input name="MotDePasse" type="password" type="text" placeholder="Password">
+                      <input name="MotDePasse" type="password" type="text" placeholder="Password" required>
                     </div>
                   </div>
                   <input type="hidden" name="action" value="inscription"/> 

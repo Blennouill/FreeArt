@@ -10,7 +10,7 @@
 	        <form data-abide method="post" action="Connexion">
 	          <div class="row collapse">
 	            <div class="small-12  columns">
-	              <input name="MailUtilisateur" type="text" placeholder="Login" required>
+	              <input name="NomUtilisateur" type="text" placeholder="Login" required>
 	            </div>
 	          </div>
 	          <div class="row collapse">

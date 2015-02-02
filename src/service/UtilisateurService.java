@@ -41,13 +41,13 @@ public class UtilisateurService {
      */
     public Utilisateur ConnexionUtilisateur(HttpServletRequest poRequest, FacadeUtilisateur fu) {
         /* Récupération des champs du formulaire */
-        String email = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_EMAIL);
+        String email = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_NOM);
         String motDePasse = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_MDP);
         /* Validation du champ email. */
         try {
             validationEmail( email );
         } catch ( Exception e ) {
-            setErreur( ConstanteFreeArt.CONSTANTE_FORM_CHAMP_EMAIL, e.getMessage() );
+            setErreur( ConstanteFreeArt.CONSTANTE_FORM_CHAMP_NOM, e.getMessage() );
         }
         /* Validation du champ mot de passe. */
         try {
@@ -71,10 +71,10 @@ public class UtilisateurService {
      * @param mail
      * @param motDePasse
      */
-	public boolean CreationUtilisateur(FacadeUtilisateur fu, String mail, String motDePasse){
+	public boolean CreationUtilisateur(FacadeUtilisateur fu, String nomUtilisateur, String motDePasse){
 		Utilisateur u = new Utilisateur();
-		u.setMail(mail);
-		u.setMotdepasse(motDePasse);
+		u.setNomUtilisateur(nomUtilisateur);
+		u.setMotDePasse(motDePasse);
 		fu.create(u);
 		return true;
 	}
