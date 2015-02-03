@@ -6,8 +6,24 @@
 <section class="section_dark">
 	<form method="post" action="Gallerie/Upload" enctype="multipart/form-data">>
 	  <fieldset>
-	    <label>Uploader une image ! <input type="file" name="Upload"></label>
-	      <input type="submit" class="round button" value="Choisir"/>
+	  <div class="row">
+			<div class="large-4 columns">
+		      	<label>Nom de l'image
+		       		<input type="text" placeholder="large-4.columns" name="NomImage"/>
+		      	</label>
+    		</div>
+		    <div class="large-4 columns">
+		      	<label>Tag de l'image
+		        	<input type="text" placeholder="large-4.columns" name="Tag" />
+		      	</label>
+		    </div>
+		    <div class="large-4 columns">
+		    	<label>Uploader une image ! 
+		    		<input type="file" name="Upload">
+		    	</label>
+		    </div>
+		</div>
+	    <input type="submit" class="round button" value="Choisir"/>
 	  </fieldset>
 	</form>
 </section>

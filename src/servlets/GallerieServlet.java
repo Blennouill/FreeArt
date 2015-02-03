@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -42,10 +43,10 @@ public class GallerieServlet extends HttpServlet {
 		// Declaration des variables
 		UtilisateurService us = new UtilisateurService();
 		ImageService is = new ImageService();
-		ArrayList<Image> ListeImages = new ArrayList<Image>();
+		List<Image> ListeImages;
 		// Traitement de la fonction
 		// -> Chargement des images
-		ListeImages = (ArrayList<Image>) is.ListeImages(facadeImage);
+		ListeImages = is.ListeImages(facadeImage);
 		poRequest.setAttribute("ListeImages", ListeImages);
 		this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_GALLERIE).forward( poRequest, poResponse );
 	}
