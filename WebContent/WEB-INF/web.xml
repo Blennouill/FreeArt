@@ -27,7 +27,7 @@
     <servlet-class>servlets.UploadServlet</servlet-class>
     <init-param>
 		<param-name>Chemin</param-name> 
-		<param-value>/RessourcesImages/</param-value> 
+		<param-value>/images/</param-value> 
 	</init-param>
     <multipart-config>
 		<location>D:/Privee/Projet/P52/tmp</location>
@@ -38,7 +38,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>UploadServlet</servlet-name>
-    <url-pattern>/Gallerie/Upload</url-pattern>
+    <url-pattern>/Upload</url-pattern>
   </servlet-mapping>
   
   <servlet>

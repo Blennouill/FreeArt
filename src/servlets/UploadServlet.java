@@ -54,6 +54,7 @@ public class UploadServlet extends HttpServlet {
 		//Initisalisation des variables
 	    String nomImage = request.getParameter("NomImage");
 	    String tag = request.getParameter("Tag");
+	    String chemin = this.getServletConfig().getInitParameter("Chemin");
 	    //Traitement de la fonction
 	    //Les données reçues sont multipart, on doit donc utiliser la méthode getPart() pour traiter le champ d'envoi de fichiers.
 	    Part part = request.getPart("Upload");
@@ -76,7 +77,7 @@ public class UploadServlet extends HttpServlet {
 
 	        // Écriture du fichier sur le disque
             try {
-    	        ecrireFichier(part, nomFichier, ConstanteFreeArt.CONSTANTE_CHEMIN_UPLOAD);
+    	        ecrireFichier(part, nomFichier, chemin);
     	        is.AjoutImage(fi, ConstanteFreeArt.CONSTANTE_CHEMIN_UPLOAD+nomFichier, datePublication, tag, nomImage);
             } 
             catch ( Exception e ) {
@@ -128,7 +129,10 @@ public class UploadServlet extends HttpServlet {
 	        while ( ( longueur = entree.read( tampon ) ) > 0 ) {
 	            sortie.write( tampon, 0, longueur );
 	        }
-	    } 
+	    }
+	    catch (IOException ioe){
+	    	ioe.toString();
+	    }
 	    finally {
 	        try {
 	            sortie.close();

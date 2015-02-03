@@ -18,6 +18,8 @@
 				</div>
 			</c:when>
 			<c:otherwise>
+			</c:otherwise>
+		</c:choose>
 			<div class="row">
 				 <div class="four columns">
 					<h3><span class="dropcap_red lsf-icon-dropcap" title="pen"></span>Dessiner !</h3>
@@ -34,8 +36,6 @@
 					<p>Contribuez à la liberté d'expression, contribuez au partage de la culture et de la créativité à  travers le monde !</p>
 				  </div>
 			</div>
-			</c:otherwise>
-		</c:choose>
         
     </section>
 
