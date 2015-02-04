@@ -36,3 +36,12 @@
 <body style="height:100%">
 <!-- ######################## Menu ######################## -->
     <%@ include file="menu.jsp" %>
+    
+ <script>
+ 	$(document).ready(function(){
+ 		$(window).scroll(function(){
+   		 	$("#theFixed").css("top",Math.max(0,900-$(this).scrollTop()));
+		});
+ 	});
+ 	
+ <script>
