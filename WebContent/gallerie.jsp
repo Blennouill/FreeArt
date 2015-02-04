@@ -2,8 +2,8 @@
 <%@ include file="header.jsp" %>
 
 <!-- ######################## Corps ######################## --> 
-<header>
 <c:if test="${!empty sessionScope.SessionUtilisateur}">
+<header>
 <div class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Upload</h3></div></div></div><br>
 	<form method="post" action="Upload" enctype="multipart/form-data">
 		<div class="row">
@@ -19,8 +19,8 @@
 			</div>
 		</div>
 	</form>
-</c:if>
 </header>
+</c:if>
 	
 <section class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Gallerie</h3></div></div></section>   
 <div class="row">
