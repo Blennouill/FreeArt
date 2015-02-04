@@ -41,6 +41,11 @@ $(document).ready(function(){
 			img.appendTo('#imgPanierContainer');
 		});
 	}
+	//===========add item count to element(s)==============
+	//doesn't matter if these elements exist or not
+	var msg = "Vous avez " + getItemCount() + " images dans votre panier";
+	$('#itemCount').text(msg);
+	$('.itemCount').text(msg);
 });
 
 function updateItemCount(n){
@@ -50,7 +55,7 @@ function updateItemCount(n){
 	}else{
 		count += n;
 	}
-	$.cookie("itemCount", count);
+	$.cookie("itemCount", count, { expires: 1 });
 }
 function getItemCount(){
 	//returns 0 if it doesn't exist
