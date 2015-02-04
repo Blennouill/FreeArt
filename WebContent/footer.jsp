@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <!-- ######################## Footer ######################## --> 
-   <footer class="section_dark" style="position:relative;margin-top:-900px;height:150px;clear:both">
+   <footer class="section_dark" style="position:relative;margin-top:-1000px">
 		<div class="row">
 				<div class="twelve columns footer">
 		 			<span class="lsf-icon" title="info"></span><h2>Copyright © 2014 Ettlinger, Faulhaber & Blenner</h2>
