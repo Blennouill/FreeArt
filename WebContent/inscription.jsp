@@ -13,7 +13,7 @@
                 <fieldset>
                   <div class="row collapse">
                     <div class="small-12  columns">
-                      <input name="NomUtilisateur" type="text" placeholder="Email" required>
+                      <input name="NomUtilisateur" type="text" placeholder="Username" required>
                     </div>
                   </div>
                   <div class="row collapse">

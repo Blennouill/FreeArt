@@ -4,7 +4,7 @@
 <!-- ######################## Corps ######################## --> 
 <header>
 <c:if test="${!empty sessionScope.SessionUtilisateur}">
-<div class="section_dark"><div class="row"><div class="three columns centered"><h2 style="color:white">Upload</h2></div></div></div>
+<div class="section_dark"><div class="row"><div class="three columns centered"><h2 style="color:white">Upload</h2></div></div></div><br>
 	<form method="post" action="Upload" enctype="multipart/form-data">
 		<div class="row">
 			<div class="row">
