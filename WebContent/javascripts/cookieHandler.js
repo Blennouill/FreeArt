@@ -61,7 +61,7 @@ $(document).ready(function(){
 		loadPanier();
 	}else{
 		alert('Vous devez autoriser les cookies pour que le panier fonctionne');
-		$('#itemCount').text('autoriser les cookies pour ajouter des images aux panier !');
+		$('#itemCount').text('Autoriser les cookies pour ajouter des images aux panier !');
 	}
 	
 });
@@ -90,7 +90,7 @@ function updatePanier(id, src){
 	var img = $('<img id="panier_' + id + '" class="panierImg">');
 	var div = $('<div class="img_in_panier"></div>');
 	//update img to remove
-	var del = $('<a class="deleteImgCookie"><span>X</span></a>');
+	var del = $('<a class="deleteImgCookie"><i class="fi-x"></i></a>');
 	$(img).attr('src', src);
 	$([$(img), $(del)]).appendTo($(div));
 	$(div).appendTo($('#panierImgs'));
