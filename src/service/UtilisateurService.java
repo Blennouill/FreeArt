@@ -1,12 +1,13 @@
 package service;
 
+import java.security.MessageDigest;
 import java.util.HashMap;
 
-import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
 import model.Utilisateur;
 import outil.ConstanteFreeArt;
+import outil.Hashage;
 import ejb.FacadeUtilisateur;
 /**
  * Classe regroupant des services rendus à UtilisateurServlet
@@ -44,25 +45,29 @@ public class UtilisateurService {
      * @return
      */
     public Utilisateur ConnexionUtilisateur(HttpServletRequest poRequest, FacadeUtilisateur fu) {
-        /* Récupération des champs du formulaire */
-        String email = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_NOM);
+    	//Initialisation des variables
+        String nom = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_NOM);
         String motDePasse = getValeurChamp( poRequest, ConstanteFreeArt.CONSTANTE_FORM_CHAMP_MDP);
-        /* Validation du champ email. */
+    	Hashage hashMdp;
+    	//Traitement de la fonction
+
+        // Validation du champ nom
         try {
-            validationEmail( email );
+            validationNom( nom );
         } catch ( Exception e ) {
             setErreur( ConstanteFreeArt.CONSTANTE_FORM_CHAMP_NOM, e.getMessage() );
         }
-        /* Validation du champ mot de passe. */
+        // Validation du champ mot de passe.
         try {
             validationMotDePasse( motDePasse );
         } catch ( Exception e ) {
             setErreur( ConstanteFreeArt.CONSTANTE_FORM_CHAMP_MDP, e.getMessage() );
         }
         
-        /* Initialisation du résultat global de la validation. */
+        // Initialisation du résultat global de la validation.
         if ( listeErreurs.isEmpty() ) {
-        	return fu.findForConnection(email, motDePasse);
+        	hashMdp = new Hashage(motDePasse);
+        	return fu.findForConnection(nom, hashMdp.GetChaineHashe());
             
         } else {
             messageResultat = "Échec de la connexion.";
@@ -76,25 +81,28 @@ public class UtilisateurService {
      * @param motDePasse
      */
 	public boolean CreationUtilisateur(FacadeUtilisateur fu, String nomUtilisateur, String motDePasse){
+		//Initialisation des varaibles
+		Hashage hashMdp = new Hashage(motDePasse);
+		//Traitement de la fonction
 		Utilisateur u = new Utilisateur();
 		u.setNomUtilisateur(nomUtilisateur);
-		u.setMotDePasse(motDePasse);
+		u.setMotDePasse(hashMdp.GetChaineHashe());
 		fu.create(u);
 		return true;
 	}
 	
     /**
-     * Valide l'adresse email saisie.
-     * @param email
+     * Valide le nom saisie.
+     * @param nom
      * @throws Exception
      */
-    private void validationEmail( String email ) throws Exception {
-        if ( email != null) {
-        	if ( email.length() < 3 ) {
-                throw new Exception( "Le mail doit contenir au moins 3 caractères.");
+    private void validationNom( String nom ) throws Exception {
+        if ( nom != null) {
+        	if ( nom.length() < 3 ) {
+                throw new Exception( "Le nom doit contenir au moins 3 caractères.");
             }
         }else {
-            throw new Exception("Merci de saisir votre mail.");
+            throw new Exception("Merci de saisir votre nom.");
         }
     }
     
