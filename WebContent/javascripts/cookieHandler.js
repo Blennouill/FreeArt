@@ -20,45 +20,49 @@
 */
 
 $(document).ready(function(){
-	
-	//an image has to be  a child of this container
-	$('.addPanier').on('click', function(){
-		var img = $(this).children("img")
-		var imgSrc = $(img).attr('src');
-		var imgId = $(img).attr('id');
+	if(are_cookies_enabled()){
+		//an image has to be  a child of this container
+		$('.addPanier').on('click', function(){
+			var img = $(this).children("img")
+			var imgSrc = $(img).attr('src');
+			var imgId = $(img).attr('id');
 
-		//adding it as a cookie that expires in one day
-		$.cookie(imgId, imgSrc, { expires: 1 });
-		updateCount();
-		updatePanier(imgId, imgSrc);
-	});
-	//delete all cookies and empty panier
-	$('#deleteAllImgCookies').on('click', function(){
-		var cookies = $.cookie();
-		//looping through all the cookies and deleting them
-		for(var cookie in cookies){
-			var wasDeleted = $.removeCookie(cookie);
+			//adding it as a cookie that expires in one day
+			$.cookie(imgId, imgSrc, { expires: 1 });
+			updateCount();
+			updatePanier(imgId, imgSrc);
+		});
+		//delete all cookies and empty panier
+		$('#deleteAllImgCookies').on('click', function(){
+			var cookies = $.cookie();
+			//looping through all the cookies and deleting them
+			for(var cookie in cookies){
+				var wasDeleted = $.removeCookie(cookie);
+				console.log('Was deleted: ' + wasDeleted);
+			}
+			$('#panierImgs').empty();
+			updateCount(0);
+			showCount();
+		});
+		$('.deleteImgCookie').on('click', function(){
+			var imgId = $(this).attr('id');
+			var wasDeleted = $.removeCookie(imgId);
 			console.log('Was deleted: ' + wasDeleted);
-		}
-		$('#panierImgs').empty();
-		updateCount(0);
-		showCount();
-	});
-	$('.deleteImgCookie').on('click', function(){
-		var imgId = $(this).attr('id');
-		var wasDeleted = $.removeCookie(imgId);
-		console.log('Was deleted: ' + wasDeleted);
-		if(wasDeleted){
-			updateCount(-1);
-		}else{
-			console.log('An error occured while trying to delete the cookie');
-		}
-		//Removing the img in panier
-		$(this).parent().remove();
-		showCount();
-	});
-	//initial load to fill the panier
-	loadPanier();
+			if(wasDeleted){
+				updateCount(-1);
+			}else{
+				console.log('An error occured while trying to delete the cookie');
+			}
+			//Removing the img in panier
+			$(this).parent().remove();
+			showCount();
+		});
+		//initial load to fill the panier
+		loadPanier();
+	}else{
+		alert('Vous devez autoriser les cookies pour que le panier fonctionne');
+		$('#itemCount').text('autoriser les cookies pour ajouter des images aux panier !');
+	}
 	
 });
 
@@ -100,4 +104,15 @@ function loadPanier(){
 		});
 		showCount();
 	}
+}
+function are_cookies_enabled()
+{
+    var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+
+    if (typeof navigator.cookieEnabled == "undefined" && !cookieEnabled)
+    { 
+        document.cookie="testcookie";
+        cookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+    }
+    return (cookieEnabled);
 }
