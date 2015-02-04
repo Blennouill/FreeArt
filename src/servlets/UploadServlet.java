@@ -49,8 +49,6 @@ public class UploadServlet extends HttpServlet {
 		//Déclaration des variables
 		UploadService us = new UploadService();
 		String chemin = this.getServletConfig().getInitParameter("Chemin");
-		//Calendar calendar = Calendar.getInstance();
-	    //Timestamp datePublication = new Timestamp(calendar.getTime().getTime());
 		//Traitement de la fonction
 	    if (us.UploaderImage(fi, poRequest, chemin)){
 	    	// Pas d'erreur

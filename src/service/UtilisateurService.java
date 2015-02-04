@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import model.Utilisateur;
 import outil.ConstanteFreeArt;
 import ejb.FacadeUtilisateur;
-
+/**
+ * Classe regroupant des services rendus à UtilisateurServlet
+ * @author KB
+ *
+ */
 public class UtilisateurService {
 
 	private String messageResultat;

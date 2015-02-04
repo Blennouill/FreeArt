@@ -55,7 +55,8 @@ public class GallerieServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest poRequest, HttpServletResponse poResponse)
 	 */
 	protected void doPost(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		//Declaration des variables
+		
 	}
 
 }

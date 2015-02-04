@@ -5,6 +5,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +17,7 @@ import outil.Utilitaire;
 import ejb.FacadeImage;
 
 /**
- * 
+ * Classe regroupant des services rendus à UploadServlet
  * @author KB
  *
  */
@@ -28,6 +30,8 @@ public class UploadService {
 		ImageService is = new ImageService();
 	    String nomImage = poRequest.getParameter("NomImage");
 	    String tag = poRequest.getParameter("Tag");
+		Calendar calendar = Calendar.getInstance();
+	    Timestamp datePublication = new Timestamp(calendar.getTime().getTime());
 	    //Traitement de la fonction
 	    //Les données reçues sont multipart, on doit donc utiliser la méthode getPart() pour traiter le champ d'envoi de fichiers.
 	    Part part = poRequest.getPart("Upload");
@@ -36,7 +40,7 @@ public class UploadService {
 	    String nomFichier = getNomFichier(part);
 	
 	    // Si la méthode a renvoyé quelque chose, il s'agit donc d'un champ de type fichier (input type="file").
-	    if ( nomFichier != null && !nomFichier.isEmpty() ) {
+	    if (nomFichier != null && !nomFichier.isEmpty()) {
 	        String nomChamp = part.getName();
 	        /*
 	         * Antibug pour Internet Explorer, qui transmet pour une raison
@@ -45,16 +49,17 @@ public class UploadService {
 	         * On doit donc faire en sorte de ne sélectionner que le nom et
 	         * l'extension du fichier, et de se débarrasser du superflu.
 	         */
-	         nomFichier = nomFichier.substring( nomFichier.lastIndexOf( '/' ) + 1 )
-	                .substring( nomFichier.lastIndexOf( '\\' ) + 1 );
+	         nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1).substring(nomFichier.lastIndexOf('\\') + 1);
 
 	        // Écriture du fichier sur le disque
             try {
+            	// Concatenation du timestamp pour rendre chaque upload unique.
+            	chemin.concat(datePublication.toString());
     	        ecrireFichier(part, nomFichier, chemin);
-    	        is.AjoutImage(fi, ConstanteFreeArt.CONSTANTE_CHEMIN_UPLOAD+nomFichier, tag, nomImage, Utilitaire.U);
+    	        is.AjoutImage(fi, ConstanteFreeArt.CONSTANTE_CHEMIN_UPLOAD+nomFichier, datePublication, tag, nomImage, Utilitaire.U);
     	        return true;
             } 
-            catch ( Exception e ) {
+            catch (Exception e) {
             	return false;
             }
 	    }
@@ -71,15 +76,16 @@ public class UploadService {
 	 * @return
 	 */
 	private static String getNomFichier( Part part ) {
-	    /* Boucle sur chacun des paramètres de l'en-tête "content-disposition". */
+		//Traitement de la fonction
+	    // Boucle sur chacun des paramètres de l'en-tête "content-disposition".
 	    for ( String contentDisposition : part.getHeader( "content-disposition" ).split( ";" ) ) {
-	    	/* Recherche de l'éventuelle présence du paramètre "filename". */
+	    	// Recherche de l'éventuelle présence du paramètre "filename".
 	        if ( contentDisposition.trim().startsWith("filename") ) {
-	            /* Si "filename" est présent, alors renvoi de sa valeur, c'est-à-dire du nom de fichier. */
+	            // Si "filename" est présent, alors renvoi de sa valeur, c'est-à-dire du nom de fichier.
 	            return contentDisposition.substring(contentDisposition.indexOf( '=' ) + 2, contentDisposition.length()-1).toString();
 	        }
 	    }
-	    /* Et pour terminer, si rien n'a été trouvé... */
+	    //Si rien trouvé
 	    return null;
 	}
 	
@@ -92,11 +98,11 @@ public class UploadService {
 	 * @throws IOException
 	 */
 	private void ecrireFichier( Part part, String nomFichier, String chemin ) throws IOException {
-	    /* Prépare les flux. */
+		//Initialisation des variables
 	    BufferedInputStream entree = null;
 	    BufferedOutputStream sortie = null;
 	    try {
-	        /* Ouvre les flux. */
+	        // Ouvre les flux.
 	        entree = new BufferedInputStream( part.getInputStream(), ConstanteFreeArt.CONSTANTE_TAILLE_TAMPON );
 	        sortie = new BufferedOutputStream( new FileOutputStream(new File(chemin + nomFichier)),ConstanteFreeArt.CONSTANTE_TAILLE_TAMPON );
 	        // Lit le fichier reçu et écrit son contenu dans un fichier sur le disque.

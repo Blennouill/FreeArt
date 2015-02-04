@@ -9,7 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import model.Image;
 import model.Utilisateur;
 import ejb.FacadeImage;
-
+/**
+ * Classe regroupant des services rendus à ImageServlet
+ * @author KB
+ *
+ */
 public class ImageService {
 
 	private String messageResultat;
@@ -37,10 +41,11 @@ public class ImageService {
      * @param nomImage
      * @return
      */
-	public boolean AjoutImage(FacadeImage fi, String chemin, String tag, String nomImage, Utilisateur u){
+	public boolean AjoutImage(FacadeImage fi, String chemin, Timestamp datePublication, String tag, String nomImage, Utilisateur u){
 		Image i = new Image();
 		i.setChemin(chemin);
 		i.setTag(tag);
+		i.setDatePublication(datePublication);
 		i.setNomImage(nomImage);
 		i.setUtilisateur(u);
 		fi.create(i);

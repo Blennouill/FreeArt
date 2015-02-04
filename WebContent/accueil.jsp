@@ -41,5 +41,8 @@
 
 <!-- ######################## Section ######################## -->
 
-   <section  class="section_dark">
+   <section class="section_dark">
+		<div class="row">
+   			<span class="lsf-icon" title="info"></span><h2>Copyright © 2014 Ettlinger, Faulhaber & Blenner</h2>
+   		</div>
     </section>
