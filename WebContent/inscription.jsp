@@ -8,7 +8,7 @@
           <div class="row">
             <div class="large-12 columns">
               <div class="signup-panel">
-                <p class="welcome">Inscription</p>
+                <h4 class="welcome">Inscription</h4>
                 <form method="post" action="Inscription">
                 <fieldset>
                   <div class="row collapse">
