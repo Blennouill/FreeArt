@@ -21,9 +21,9 @@
 </c:if>
 </header>
 	
-<section class="section_light"><div style="clear: both"></div>        
+<section class="section_light"><br></section>      
 	<div class="twelve columns">
-		<div id="container">
+		<div id="container" class="row">
 		<c:forEach var="image" items="${ListeImages}">
 			<!-- photo -->
 			<div class='box photo col2'>
@@ -34,7 +34,6 @@
 		</c:forEach>
 		</div> <!-- end Masonry container -->
     </div>
-</section>
 
 <!-- ######################## Scripts ######################## --> 
 

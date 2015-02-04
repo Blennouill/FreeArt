@@ -18,7 +18,7 @@
 		<c:choose>
 			<c:when test="${!empty sessionScope.SessionUtilisateur}">
 				<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
-				<h5 class="succes">Bonjour ${sessionScope.SessionUtilisateur.nomUtilisateur}</h5>
+				<h4 class="succes">Bonjour ${sessionScope.SessionUtilisateur.nomUtilisateur} !</h4>
 				<a href="Panier"><span class="dropcap_red lsf-icon-dropcap" title="cart"></span></a>
 			</c:when>
 			<c:otherwise>
