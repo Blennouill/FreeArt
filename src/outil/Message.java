@@ -10,11 +10,11 @@ public class Message {
 	/**
 	 * Type du message
 	 */
-	public String TypeMessage;
+	public String typeMessage;
 	/**
 	 * Contenu du message
 	 */
-	public String Message;
+	public String message;
 	
 	/**
 	 * 
@@ -22,8 +22,14 @@ public class Message {
 	 * @param m
 	 */
 	public Message(String tm, String m){
-		this.TypeMessage=tm;
-		this.Message=m;
+		this.typeMessage=tm;
+		this.message=m;
 	}
 	
+	/**
+	 * Getteur essentiel pour utilisation de l'objet dans les JSP
+	 */
+	public String getMessage(){
+		return this.message;
+	}
 }

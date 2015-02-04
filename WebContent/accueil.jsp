@@ -24,13 +24,13 @@
 				<c:choose>
 					<c:when test="${AfficheErreur}">
 						<div data-alert class="alert-box alert round">
-							<c:out value="${Message.Message}"/>
+							<c:out value="${Message.message}"/>
 							<a href="#" class="close">&times;</a>
 						</div>
 					</c:when>
 					<c:when test="${AfficheSucces}">
 						<div data-alert class="alert-box succes round">
-							<c:out value="${Message.Message}"/>
+							<c:out value="${Message.message}"/>
 							<a href="#" class="close">&times;</a>
 						</div>
 					</c:when>
