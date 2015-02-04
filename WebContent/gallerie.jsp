@@ -3,6 +3,7 @@
 
 <!-- ######################## Corps ######################## --> 
 <header>
+<c:if test="${!empty sessionScope.SessionUtilisateur}">
 	<form method="post" action="Upload" enctype="multipart/form-data">
 		<div class="row">
 			<div class="row">
@@ -17,6 +18,7 @@
 			</div>
 		</div>
 	</form>
+</c:if>
 </header>
 	
 <section class="section_light"><div style="clear: both"></div>        

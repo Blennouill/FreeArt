@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Utilisateur;
 import outil.ConstanteFreeArt;
+import outil.Utilitaire;
 import service.UtilisateurService;
 import ejb.FacadeUtilisateur;
 
@@ -87,6 +88,7 @@ public class UtilisateurServlet extends HttpServlet {
 	        } else {
 	            loSession.setAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR, null);
 	        }
+	        Utilitaire.U = utilisateurCourant;
 	        return true;
 		}
 		else{

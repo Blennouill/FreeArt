@@ -1,14 +1,13 @@
 package service;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
 import model.Image;
+import model.Utilisateur;
 import ejb.FacadeImage;
 
 public class ImageService {
@@ -38,12 +37,12 @@ public class ImageService {
      * @param nomImage
      * @return
      */
-	public boolean AjoutImage(FacadeImage fi, String chemin, Timestamp datePublication, String tag, String nomImage){
+	public boolean AjoutImage(FacadeImage fi, String chemin, String tag, String nomImage, Utilisateur u){
 		Image i = new Image();
 		i.setChemin(chemin);
-		i.setDatePublication(datePublication);
 		i.setTag(tag);
 		i.setNomImage(nomImage);
+		i.setUtilisateur(u);
 		fi.create(i);
 		return true;
 	}
