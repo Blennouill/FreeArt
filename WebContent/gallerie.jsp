@@ -23,6 +23,7 @@
 </header>
 	
 <section class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Gallerie</h3></div></div></section>   
+<div class="row">
 	<div class="twelve columns">
 		<div id="container" class="row">
 		<c:forEach var="image" items="${ListeImages}">
@@ -35,6 +36,7 @@
 		</c:forEach>
 		</div> <!-- end Masonry container -->
     </div>
+ </div>
 
 <%@ include file="footer.jsp" %>
 <!-- ######################## Scripts ######################## --> 
