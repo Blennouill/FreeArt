@@ -9,6 +9,7 @@
 			<c:out value="${Message.message}"/>
 			<a href="#" class="close">&times;</a>
 		</div>
+		<c:remove var="AfficheErreur" scope="request"/>
 		</c:if>
         <div class="four columns">
 	      <div class="signup-panel">

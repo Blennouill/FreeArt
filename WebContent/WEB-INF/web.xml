@@ -50,4 +50,13 @@
     <url-pattern>/Connexion/*</url-pattern>
     <url-pattern>/Inscription/*</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>PanierServlet</servlet-name>
+    <servlet-class>servlets.PanierServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PanierServlet</servlet-name>
+    <url-pattern>/Panier/*</url-pattern>
+  </servlet-mapping>
 </web-app>

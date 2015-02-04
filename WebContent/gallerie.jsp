@@ -29,9 +29,11 @@
 		<c:forEach var="image" items="${ListeImages}">
 			<!-- photo -->
 			<div class='box photo col2'>
-				<a href="#"><img src=<c:out value="${image.chemin}"/> alt="desc"/></a>
+				<img id=<c:out value="${image.codeImage}"/> src=<c:out value="${image.chemin}"/> alt="desc"/>
                 <h4><strong><c:out value="${image.nomImage}"/></strong></h4>
-                <p><span class="dropcap_red lsf-icon-dropcap" title="tag"></span><c:out value="${image.tag}"/></p>
+                <p><span class="lsf-icon" title="tag"></span><c:out value="${image.tag}"/><br/>
+                <span class="lsf-icon" title="user"></span><c:out value="${image.utilisateur.nomUtilisateur}"/></br>
+                <a href ="Panier" class="lsf-icon" title="add"></a></p>
 			</div>
 		</c:forEach>
 		</div> <!-- end Masonry container -->
