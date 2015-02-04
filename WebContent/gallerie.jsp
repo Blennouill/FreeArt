@@ -4,7 +4,7 @@
 <!-- ######################## Corps ######################## --> 
 <header>
 <c:if test="${!empty sessionScope.SessionUtilisateur}">
-<div class="section_dark"><div class="row"><div class="three columns centered"><h2 style="color:white">Upload</h2></div></div></div><br>
+<div class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Upload</h3></div></div></div><br>
 	<form method="post" action="Upload" enctype="multipart/form-data">
 		<div class="row">
 			<div class="row">
@@ -22,7 +22,7 @@
 </c:if>
 </header>
 	
-<section class="section_dark"><div class="row"><div class="three columns centered"><h1 style="color:white">Gallerie</h1></div></div></section>   
+<section class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Gallerie</h3></div></div></section>   
 	<div class="twelve columns">
 		<div id="container" class="row">
 		<c:forEach var="image" items="${ListeImages}">
