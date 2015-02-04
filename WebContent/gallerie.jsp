@@ -4,26 +4,20 @@
 <!-- ######################## Corps ######################## --> 
 <header>
 	<form method="post" action="Upload" enctype="multipart/form-data">
-	  <div class="row">
-			<div class="large-4 columns">
-		      	<label>Nom de l'image
-		       		<input type="text" placeholder="" name="NomImage"/>
-		      	</label>
-    		</div>
-		    <div class="large-4 columns">
-		      	<label>Tag de l'image
-		        	<input type="text" placeholder="" name="Tag" />
-		      	</label>
-		    </div>
-		    <div class="large-4 columns">
-		    	<label>Uploader une image ! 
-		    		<input type="file" name="Upload">
-		    	</label>
-		    </div>
+		<div class="row">
+			<div class="row">
+				<div>
+					<label>Nom de l'image</label>
+					<input type="text" placeholder="" name="NomImage">
+		   			<label>Tag de l'image </label>
+					<input type="text" placeholder="" name="Tag">
+		   			<input type="file" name="Upload"><br><br>
+		  			<input type="submit" class="round button" value="Choisir">
+		  		</div>
+			</div>
 		</div>
-	    <input type="submit" class="round button" value="Choisir"/>
 	</form>
-	</header>
+</header>
 	
 <section class="section_light"><div style="clear: both"></div>        
 	<div class="twelve columns">
