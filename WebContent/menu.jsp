@@ -5,7 +5,6 @@
 		<ul id="menu-header" class="nav-bar horizontal">
 			<li class="active"><a href="Accueil">Accueil</a></li>
 			<li class=""><a href="Gallerie">Gallerie</a></li>
-			<li class=""><a href="Contact">Contact</a></li>
 		</ul>
 		<script type="text/javascript">
 		//<![CDATA[

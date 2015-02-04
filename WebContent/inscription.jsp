@@ -5,7 +5,7 @@
 <div class="center row">
 		<c:if test="${AfficheErreur}">
 			<div data-alert class="alert-box alert round">
-				<c:out value="${Message.Message}"/>
+				<c:out value="${Message.message}"/>
 				<a href="#" class="close">&times;</a>
 			</div>
 		</c:if>
@@ -30,7 +30,6 @@
                   <input type="hidden" name="action" value="inscription"/> 
                   <input class="round button" type="submit" value="Valider" name="submit"/>
                   <br />
-                  <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
             	</fieldset>
                 </form>
               </div>

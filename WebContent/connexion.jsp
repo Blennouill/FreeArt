@@ -6,7 +6,7 @@
         <div class="row">
         <c:if test="${AfficheErreur}">
 		<div data-alert class="alert-box alert round">
-			<c:out value="${Message.Message}"/>
+			<c:out value="${Message.message}"/>
 			<a href="#" class="close">&times;</a>
 		</div>
 		</c:if>
