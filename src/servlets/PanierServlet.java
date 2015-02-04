@@ -35,6 +35,7 @@ public class PanierServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		throw new NotImplementedException();
 	}
 
 }
