@@ -36,13 +36,5 @@
 					<p>Contribuez à la liberté d'expression, contribuez au partage de la culture et de la créativité à  travers le monde !</p>
 				  </div>
 			</div>
-        
     </section>
-
-<!-- ######################## Section ######################## -->
-
-   <section class="section_dark">
-		<div class="row">
-   			<span class="lsf-icon" title="info"></span><h2>Copyright © 2014 Ettlinger, Faulhaber & Blenner</h2>
-   		</div>
-    </section>
+    <%@ include file="footer.jsp" %>

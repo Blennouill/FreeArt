@@ -36,15 +36,9 @@
 		</div> <!-- end Masonry container -->
     </div>
 
+<%@ include file="footer.jsp" %>
 <!-- ######################## Scripts ######################## --> 
 
-	<!-- end page wrap) -->
-	<!-- Included JS Files (Compressed) -->
-	<script src="javascripts/foundation.min.js" type="text/javascript">
-	</script>
-	<!-- Initialize JS Plugins -->
-	<script src="javascripts/app.js" type="text/javascript">
-	</script>
 	<!-- Masonry for galleries -->
 	<script src="javascripts/masonry.js" type="text/javascript">
 	</script>
