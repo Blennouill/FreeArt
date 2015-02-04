@@ -33,6 +33,8 @@
 
 </head>
 
-<body>
+<div id="wrap" style="min-height:100%">
+<div id="main" style="padding-bottom:900px">
+<body style="height:100%">
 <!-- ######################## Menu ######################## -->
     <%@ include file="menu.jsp" %>
