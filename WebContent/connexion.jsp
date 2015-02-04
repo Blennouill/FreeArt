@@ -4,10 +4,12 @@
 <%@ include file="header.jsp" %>
 <section class="section_light">
         <div class="row">
+        <c:if test="${AfficheErreur}">
 		<div data-alert class="alert-box alert round">
-			La connexion a echouée, le couple nom/mot de passe est incorrect.
+			<c:out value="${Message.Message}"/>
 			<a href="#" class="close">&times;</a>
 		</div>
+		</c:if>
         <div class="four columns">
 	      <div class="signup-panel">
 	        <h4 class="welcome">Connexion</h4>

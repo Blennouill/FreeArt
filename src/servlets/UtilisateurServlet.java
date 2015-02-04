@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import model.Utilisateur;
 import outil.ConstanteFreeArt;
+import outil.MEnumeration.ENUMTypeMessage;
+import outil.Message;
 import outil.Utilitaire;
 import service.UtilisateurService;
 import ejb.FacadeUtilisateur;
@@ -52,15 +54,37 @@ public class UtilisateurServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
+		// Declaration des variables
+		Message m;
 		// Traitement de la fonction
 		switch(poRequest.getServletPath()){
 		case "/Connexion":
-			if(Connexion(poRequest, poResponse))
+			if(Connexion(poRequest, poResponse)){
+				m = new Message(ENUMTypeMessage.AfficheSucces.toString(), ConstanteFreeArt.CONSTANTE_SUCCES_CONNEXION);
+				poRequest.setAttribute(ENUMTypeMessage.AfficheSucces.toString(), true);
+				poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
 				this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( poRequest, poResponse );
+			}
+			else{
+				m = new Message(ENUMTypeMessage.AfficheErreur.toString(), ConstanteFreeArt.CONSTANTE_ERREUR_CONNEXION);
+				poRequest.setAttribute(ENUMTypeMessage.AfficheErreur.toString(), true);
+				poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
+				this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_CONNEXION).forward( poRequest, poResponse );
+			}
 			break;
 		case "/Inscription":
-			if (Inscription(poRequest, poResponse))
+			if (Inscription(poRequest, poResponse)){
+				m = new Message(ENUMTypeMessage.AfficheSucces.toString(), ConstanteFreeArt.CONSTANTE_SUCCES_INSCRIPTION);
+				poRequest.setAttribute(ENUMTypeMessage.AfficheSucces.toString(), true);
+				poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
 				this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( poRequest, poResponse );
+			}
+			else {
+				m = new Message(ENUMTypeMessage.AfficheErreur.toString(), ConstanteFreeArt.CONSTANTE_ERREUR_INSCRIPTION);
+				poRequest.setAttribute(ENUMTypeMessage.AfficheErreur.toString(), true);
+				poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
+				this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( poRequest, poResponse );
+			}
 			break;	
 		}
 	}

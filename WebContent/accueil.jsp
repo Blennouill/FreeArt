@@ -21,6 +21,20 @@
 			</c:otherwise>
 		</c:choose>
 			<div class="row">
+				<c:choose>
+					<c:when test="${AfficheErreur}">
+						<div data-alert class="alert-box alert round">
+							<c:out value="${Message.Message}"/>
+							<a href="#" class="close">&times;</a>
+						</div>
+					</c:when>
+					<c:when test="${AfficheSucces}">
+						<div data-alert class="alert-box succes round">
+							<c:out value="${Message.Message}"/>
+							<a href="#" class="close">&times;</a>
+						</div>
+					</c:when>
+				</c:choose>
 				 <div class="four columns">
 					<h3><span class="dropcap_red lsf-icon-dropcap" title="pen"></span>Dessiner !</h3>
 					<p>Dessinez, créez toutes vos envies</p>

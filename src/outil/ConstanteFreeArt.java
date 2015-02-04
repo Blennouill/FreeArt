@@ -29,4 +29,13 @@ public final class ConstanteFreeArt {
 	// Constante liés aux uploads
 	public static final String CONSTANTE_CHEMIN_UPLOAD = "/images/";
 	public static final int CONSTANTE_TAILLE_TAMPON = 10240; // 10 ko
+	
+	// Constante message
+	public static final String CONSTANTE_SUCCES_CONNEXION = "Vous êtes à présent connectés !";
+	public static final String CONSTANTE_SUCCES_INSCRIPTION = "Votre inscription a bien été prise en compte, veuillez vous connecter...";
+	public static final String CONSTANTE_ERREUR_CONNEXION = "La tentative de connexion a echouée.";
+	public static final String CONSTANTE_ERREUR_INSCRIPTION = "La tentative d'inscription a echouée.";
+	
+	// Constante diverse
+	public static final String CONSTANTE_OBJET_MESSAGE= "Message";
 }

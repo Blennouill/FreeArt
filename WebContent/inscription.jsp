@@ -3,6 +3,12 @@
 <%@ include file="header.jsp" %>
 <section class="section_light">
 <div class="center row">
+		<c:if test="${AfficheErreur}">
+			<div data-alert class="alert-box alert round">
+				<c:out value="${Message.Message}"/>
+				<a href="#" class="close">&times;</a>
+			</div>
+		</c:if>
     <div class="large-6 columns">
       <div class="content" data-section-content>
           <div class="row">
