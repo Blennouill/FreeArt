@@ -25,7 +25,6 @@
 <div id="imgPanierContainer">
 	<div>
 		<div id="itemCount"></div>
-		<a href="#">Voir panier</a>
 	</div>
 	<div id="panierImgs">
 		<!-- example:
@@ -57,7 +56,7 @@
 				  	</div>
 					<div class="row">
 					    <div class="large-4 columns">
-					      <label style="color:white">Mot clé recherché:
+					      <label style="color:white">Mot clÃ© recherchÃ©:
 					        <input type="text" placeholder="Mot">
 					      </label>
 					    </div>
