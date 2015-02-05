@@ -17,3 +17,6 @@
 	<a id="deleteAllImgCookies">Tout Supprimer</a>
 	<a href="#">Telecharge tout en .zip</a>
 </div>
+<!-- Scripts here -->
+<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+<script type="text/javascript" src="javascripts/cookieHandler.js"></script>
