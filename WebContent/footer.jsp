@@ -4,7 +4,7 @@
    <footer class="section_dark" style="height:400px">
 		<div class="row">
 				<div class="twelve columns footer">
-					<img id="bk" src="images/FreeArt.png" style="opacity:0.7">
+					<img id="bk" src="images/FreeArt.png" style="opacity:0.7; border-radius:10px">
 					<div><br></div>
 		 			<h2>Copyright © 2014 Ettlinger, Faulhaber & Blenner</h2>
 		 		</div>
