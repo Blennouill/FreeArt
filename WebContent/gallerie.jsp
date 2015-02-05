@@ -64,7 +64,7 @@
 	<script src="javascripts/masonry.js" type="text/javascript">
 	</script>
 	<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
-	<script type="text/javascript" src="javascripts/codeHandler.js"></script>
+	<script type="text/javascript" src="javascripts/cookieHandler.js"></script>
 //<![CDATA[
       $(function(){
         var $container = $('#container');
