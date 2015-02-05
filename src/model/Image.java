@@ -1,11 +1,8 @@
 package model;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
-
 import java.sql.Timestamp;
-import java.util.List;
 
 
 /**
@@ -92,4 +89,5 @@ public class Image implements Serializable {
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
+
 }
