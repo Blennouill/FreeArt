@@ -30,7 +30,6 @@ $(document).ready(function(){
 
 			//adding it as a cookie that expires in one day
 			$.cookie(imgId, imgSrc, { expires: 1 });
-			updateCount();
 			updatePanier(imgId, imgSrc);
 		});
 		//delete all cookies and empty panier
@@ -42,18 +41,12 @@ $(document).ready(function(){
 				console.log('Was deleted: ' + wasDeleted);
 			}
 			$('#panierImgs').empty();
-			updateCount(0);
 			showCount();
 		});
 		$('.deleteImgCookie').on('click', function(){
 			var imgId = $(this).parent().children('img').prop('id');
 			var wasDeleted = $.removeCookie(imgId.split('_')[1]);
 			console.log('Was deleted: ' + wasDeleted);
-			if(wasDeleted){
-				updateCount(-1);
-			}else{
-				console.log('An error occured while trying to delete the cookie');
-			}
 			//Removing the img in panier
 			$(this).parent().remove();
 			showCount();
@@ -73,19 +66,7 @@ function showCount(){
 }
 function getItemCount(){
 	//returns 0 if it doesn't exist
-	return $.cookie("itemCount") || 0;
-}
-function updateCount(n){
-		//get current count if it exists
-		var count = $.cookie('itemCount') || 0;
-		if(n == 0){
-			//here we remove everything and empty the panier
-			count = 0;
-		}else{
-			count += n;
-		}
-		//create/update the cookie with the new info and set it to expire in one day
-		$.cookie('itemCount', count, { expires: 1 });
+	return $.cookie().length || 0;
 }
 function updatePanier(id, src){
 	var img = $('<img id="panier_' + id + '" class="panierImg">');
