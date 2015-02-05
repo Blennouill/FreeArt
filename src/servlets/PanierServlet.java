@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import outil.ConstanteFreeArt;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import outil.Message;
+import outil.MEnumeration.ENUMTypeMessage;
+import service.PanierService;
 
 /**
  * Servlet implementation class PanierServlet
@@ -37,9 +39,19 @@ public class PanierServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		throw new NotImplementedException();
+	protected void doPost(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
+		//Declaration des variables
+		PanierService ps = new PanierService();
+		Message m;
+		//Traitement de la fonction
+		if (poRequest.getParameter("action").compareTo(ConstanteFreeArt.CONSTANTE_PANIER_REQUETE_ACTION_TELECHARGER) == 0){
+			if(ps.DownloadImages(poRequest)){
+				m = new Message(ENUMTypeMessage.AfficheSucces.toString(), ConstanteFreeArt.CONSTANTE_SUCCES_TELECHARGEMENT);
+				poRequest.setAttribute(ENUMTypeMessage.AfficheSucces.toString(), true);
+				poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
+				this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_PANIER).forward(poRequest, poResponse);
+			}
+		}
 	}
 
 }

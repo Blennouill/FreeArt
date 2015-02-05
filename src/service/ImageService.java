@@ -1,6 +1,7 @@
 package service;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -57,10 +58,28 @@ public class ImageService {
 	 * @param fi
 	 * @return
 	 */
-	public List ListeImages(FacadeImage fi){
+	public List<Image> ListeImages(FacadeImage fi){
 		//Declaration des variables
 		//Traitement de la fonction
 		return fi.findAll();
+	}
+	
+	/**
+	 * 
+	 * @param fi
+	 * @param tag
+	 * @return
+	 */
+	public List<Image> RenvoyerListeImageRechercherParTag(FacadeImage fi, String tag){
+		//Declaration des variables
+		List<Image> ListeImages = new ArrayList<Image>();
+		//Traitement de la fonction
+		for( Image i : ListeImages(fi)){
+			if (i.getTag() != tag){
+				ListeImages.add(i);
+			}
+		}
+		return ListeImages;
 	}
 
 	/**

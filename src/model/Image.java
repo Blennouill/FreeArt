@@ -1,7 +1,9 @@
 package model;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -12,7 +14,9 @@ import java.util.List;
  */
 @Entity
 @Table(name="image")
-@NamedQuery(name="Image.findAll", query="SELECT i FROM Image i")
+@NamedQueries({	@NamedQuery(name="Image.findAll", query="SELECT i FROM Image i"),
+				@NamedQuery(name="Image.findImagesParTag", query="SELECT i FROM Image i WHERE i.tag like :tag")
+})
 public class Image implements Serializable {
 	private static final long serialVersionUID = 1L;
 

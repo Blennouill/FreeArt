@@ -36,7 +36,12 @@ public final class ConstanteFreeArt {
 	public static final String CONSTANTE_SUCCES_INSCRIPTION = "Votre inscription a bien été prise en compte, veuillez vous connecter...";
 	public static final String CONSTANTE_ERREUR_CONNEXION = "La tentative de connexion a echouée.";
 	public static final String CONSTANTE_ERREUR_INSCRIPTION = "La tentative d'inscription a echouée.";
+	public static final String CONSTANTE_SUCCES_DECONNEXION = "Vous êtes deconnecté.";
+	public static final String CONSTANTE_SUCCES_TELECHARGEMENT = "Le telechargement a réussi.";
+	public static final String CONSTANTE_SUCCES_UPLOAD = "L'image a bien été ajoutée.";
+	public static final String CONSTANTE_ERREUR_UPLOAD = "Il y a eu un problème lors de l'upload. Veuillez réessayer...";
 	
 	// Constante diverse
 	public static final String CONSTANTE_OBJET_MESSAGE= "Message";
+	public static final String CONSTANTE_PANIER_REQUETE_ACTION_TELECHARGER = "Telecharger";
 }

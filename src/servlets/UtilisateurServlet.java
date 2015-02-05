@@ -40,12 +40,22 @@ public class UtilisateurServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
+		//Declaration des variables
+		Message m;
+		//Traitement de la fonction
 		switch(poRequest.getServletPath()){
 		case "/Connexion":
 			this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_CONNEXION).forward(poRequest, poResponse);
 			break;
 		case "/Inscription":
 			this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_INSCRIPTION).forward( poRequest, poResponse );
+			break;
+		case "/Deconnexion":
+			Deconnexion(poRequest);
+			m = new Message(ENUMTypeMessage.AfficheSucces.toString(), ConstanteFreeArt.CONSTANTE_SUCCES_CONNEXION);
+			poRequest.setAttribute(ENUMTypeMessage.AfficheSucces.toString(), true);
+			poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
+			this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_ACCUEIL).forward( poRequest, poResponse );
 			break;	
 		}
 	}
@@ -139,5 +149,20 @@ public class UtilisateurServlet extends HttpServlet {
 		}
 		else
 			return false;
+	}
+	
+	/**
+	 * Deconnexion de l'utilisateur
+	 * @param poRequest
+	 * @param poResponse
+	 */
+	private boolean Deconnexion(HttpServletRequest poRequest){
+		// Déclaration des variables
+		HttpSession loSession;
+		// Initialisation ds variables
+		loSession = poRequest.getSession();
+		loSession.removeAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR);
+		Utilitaire.U = null;
+		return true;
 	}
 }

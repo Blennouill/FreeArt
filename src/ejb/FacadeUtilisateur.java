@@ -37,7 +37,7 @@ public class FacadeUtilisateur extends FacadeAbstraite {
 	public Utilisateur findForConnection(String mail, String mdp) {
 		// Declaration des variables
 		List<Utilisateur> lUsers;
-		
+		// Traitement de la fonction
 		Query query = em.createNamedQuery("Utilisateur.FindForConnection");
 		query.setParameter("nom", mail) ;
 		query.setParameter("mdp", mdp) ;

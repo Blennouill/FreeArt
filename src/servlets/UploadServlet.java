@@ -1,8 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.sql.Timestamp;
-import java.util.Calendar;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,11 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
 import outil.ConstanteFreeArt;
-import outil.Utilitaire;
-import service.ImageService;
+import outil.MEnumeration.ENUMTypeMessage;
+import outil.Message;
 import service.UploadService;
 import ejb.FacadeImage;
 
@@ -49,12 +46,18 @@ public class UploadServlet extends HttpServlet {
 		//Déclaration des variables
 		UploadService us = new UploadService();
 		String chemin = this.getServletConfig().getInitParameter("Chemin");
+		Message m;
 		//Traitement de la fonction
 	    if (us.UploaderImage(fi, poRequest, chemin)){
-	    	// Pas d'erreur
+			m = new Message(ENUMTypeMessage.AfficheSucces.toString(), ConstanteFreeArt.CONSTANTE_SUCCES_UPLOAD);
+			poRequest.setAttribute(ENUMTypeMessage.AfficheSucces.toString(), true);
+			poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
 	    }
-	    else
-	    	// Erreur !
+	    else{
+			m = new Message(ENUMTypeMessage.AfficheErreur.toString(), ConstanteFreeArt.CONSTANTE_ERREUR_UPLOAD);
+			poRequest.setAttribute(ENUMTypeMessage.AfficheErreur.toString(), true);
+			poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
+	    }
 	    this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_GALLERIE).forward( poRequest, poResponse );
 	}
 	
