@@ -27,7 +27,7 @@ $(document).ready(function(){
 			var img = $(this).parent().parent().children("img")
 			var imgSrc = $(img).prop('src');
 			var imgId = $(img).prop('id');
-			alert(imgId + ' ' + imgSrc);
+
 			//adding it as a cookie that expires in one day
 			$.cookie(imgId, imgSrc, { expires: 1 });
 			updateCount();
