@@ -46,8 +46,8 @@ $(document).ready(function(){
 			showCount();
 		});
 		$('.deleteImgCookie').on('click', function(){
-			var imgId = $(this).attr('id');
-			var wasDeleted = $.removeCookie(imgId);
+			var imgId = $(this).parent().children('img').prop('id');
+			var wasDeleted = $.removeCookie(imgId.split('_')[1]);
 			console.log('Was deleted: ' + wasDeleted);
 			if(wasDeleted){
 				updateCount(-1);
