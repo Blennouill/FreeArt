@@ -16,6 +16,7 @@
 		</script>
 	</div>
 	<div class="two columns">
+	<br>
 		<%-- Vérification de la présence d'un objet utilisateur en session --%>
 		<c:choose>
 			<c:when test="${!empty sessionScope.SessionUtilisateur}">
