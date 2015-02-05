@@ -3,7 +3,6 @@
 <div class="twelve columns header_nav_fullwidth">
 	<div class="five columns" style="padding-top:8px">
 		<ul id="menu-header" class="nav-bar horizontal">
-			<li><img id="bk" src="images/FreeArt.png"></li>
 			<li class="active"><a href="Accueil">Accueil</a></li>
 			<li class=""><a href="Gallerie">Gallerie</a></li>
 		</ul>

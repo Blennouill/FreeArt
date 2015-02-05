@@ -4,6 +4,7 @@
    <footer class="section_dark" style="height:400px">
 		<div class="row">
 				<div class="twelve columns footer">
+					<img id="bk" src="images/FreeArt.png">
 		 			<span class="lsf-icon" title="info"></span><h2>Copyright © 2014 Ettlinger, Faulhaber & Blenner</h2>
 		 		</div>
 	 		</div>
