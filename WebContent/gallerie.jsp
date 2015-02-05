@@ -39,7 +39,42 @@
 	</div>
 	<a id="deleteAllImgCookies">Tout Supprimer</a>
 </div>
-<section class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Gallerie</h3></div></div></section>   
+<section class="section_dark" style="color:white">
+	<fieldset>
+		<form methode="post">
+			<ul class="inline-list">
+			    <li>
+				    <div class="row">
+					    <div class="large-12 columns">
+					      <label style="color:white">Chercher l'image par:
+					        <select>
+					          <option value="autor">Nom d'auteur</option>
+					          <option value="name">Son nom</option>
+					          <option value="tag">Son tag</option>
+					        </select>
+					      </label>
+					    </div>
+				  	</div>
+					<div class="row">
+					    <div class="large-4 columns">
+					      <label style="color:white">Texte recherché:
+					        <input type="text" placeholder="Texte">
+					      </label>
+					    </div>
+					</div>
+					<div class="row">
+					    <div class="large-4 columns">
+					        <input type="Submit" value="Rechercher" class="button">
+						</div>
+					</div>
+				</li>
+				<div class="three columns centered" style="text-align: center">
+					<h3 style="color:white">Gallerie</h3>
+				</div>	  
+			</ul>
+		</form>
+	</fieldset>
+</section>   
 <div class="row">
 	<div class="twelve columns">
 		<div id="container" class="row">
