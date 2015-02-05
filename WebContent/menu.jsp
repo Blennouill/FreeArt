@@ -3,6 +3,7 @@
 <div class="twelve columns header_nav_fullwidth">
 	<div class="five columns" style="padding-top:8px">
 		<ul id="menu-header" class="nav-bar horizontal">
+			<li><img src="images/FreeArt.png"></li>
 			<li class="active"><a href="Accueil">Accueil</a></li>
 			<li class=""><a href="Gallerie">Gallerie</a></li>
 		</ul>
@@ -19,7 +20,8 @@
 				<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
 				<h4 class="succes">Bonjour ${sessionScope.SessionUtilisateur.nomUtilisateur} !</h4>
 				<a href="Panier" class="dropcap_red lsf-icon-dropcap" title="cart"></a>
-				<a href="Deconnexion" class="dropcap_red lsf-icon-dropcap" title="logout"></a>
+				<form id="formDeco" method="post" action="Deconnexion"><input type="submit" hidden="true"/></form>
+				<a href="Deconnexion" id="aDeco" class="dropcap_red lsf-icon-dropcap" title="logout"></a>
 			</c:when>
 			<c:otherwise>
 				<p style="margin: 6px 0">
@@ -31,3 +33,10 @@
    	</div>
 </div> 
 </nav>
+<script>
+$(document).ready(function(){
+	$('#aDeco').on('click', function(){
+ 						$('#formDeco')[0].submit();
+	});
+});
+ </script>
