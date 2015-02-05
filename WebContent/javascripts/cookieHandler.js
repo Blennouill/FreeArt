@@ -63,8 +63,7 @@ $(document).ready(function(){
 });
 
 function showCount(){
-	var msg = "Vous avez " + getItemCount() + " images dans votre panier";
-	$('#itemCount').text(msg);	
+	$('#itemCount').text(getItemCount());	
 }
 function getItemCount(){
 	//returns 0 if it doesn't exist
