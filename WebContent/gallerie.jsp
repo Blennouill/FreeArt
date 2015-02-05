@@ -56,7 +56,7 @@
 				  	</div>
 					<div class="row">
 					    <div class="large-4 columns">
-					      <label style="color:white">Mot clÃ© recherchÃ©:
+					      <label style="color:white">Mot clé recherché:
 					        <input type="text" placeholder="Mot">
 					      </label>
 					    </div>

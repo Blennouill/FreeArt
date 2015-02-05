@@ -1,26 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp" %>
 
-<!-- ######################## Corps ######################## --> 
-<c:if test="${!empty sessionScope.SessionUtilisateur}">
-<header>
-<div class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Upload</h3></div></div></div><br>
-	<form method="post" action="Upload" enctype="multipart/form-data">
-		<div class="row">
-			<div class="row">
-				<div>
-					<label>Nom de l'image</label>
-					<input type="text" placeholder="" name="NomImage" required>
-		   			<label>Tag de l'image </label>
-					<input type="text" placeholder="" name="Tag" required>
-		   			<input type="file" name="Upload" required><br><br>
-		  			<input type="submit" class="round button" value="Choisir">
-		  		</div>
-			</div>
-		</div>
-	</form>
-</header>
-</c:if>
 <div id="imgPanierContainer">
 	<div>
 		<div id="itemCount"></div>
