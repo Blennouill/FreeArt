@@ -1,6 +1,9 @@
 
 <div id="imgPanierContainer">
-	<div id="itemCount"></div>
+	<div>
+		<div id="itemCount"></div>
+		<a href="#">Voir panier</a>
+	</div>
 	<div id="panierImgs">
 		<!-- example:
 			//class panierImg = affiche l'image en super petit pour quel puisse etre afficher dans le panier
@@ -12,4 +15,5 @@
 			 </div> -->
 	</div>
 	<a id="deleteAllImgCookies">Tout Supprimer</a>
+	<a href="#">Telecharge tout en .zip</a>
 </div>
