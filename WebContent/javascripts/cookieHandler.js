@@ -67,7 +67,7 @@ function showCount(){
 }
 function getItemCount(){
 	//returns 0 if it doesn't exist
-	return $.cookie().length || 0;
+	return $.cookie().split(';').length || 0;
 }
 function updatePanier(id, src){
 	var img = $('<img id="panier_' + id + '" class="panierImg">');
