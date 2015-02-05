@@ -22,22 +22,6 @@
 </header>
 </c:if>
 
-<div id="imgPanierContainer">
-	<div>
-		<div id="itemCount"></div>
-	</div>
-	<div id="panierImgs">
-		<!-- example:
-			//class panierImg = affiche l'image en super petit pour quel puisse etre afficher dans le panier
-			 <div class="img_in_panier">
-			 	<img class="panierImg">
-			 	<a class="deleteImgCookie">
-			 		<i class="fi-x"></i>
-			 	<a>
-			 </div> -->
-	</div>
-	<a id="deleteAllImgCookies">Tout Supprimer</a>
-</div>
 <section class="section_dark" style="color:white">
 	<fieldset>
 		<form methode="post" action="Recherche">
