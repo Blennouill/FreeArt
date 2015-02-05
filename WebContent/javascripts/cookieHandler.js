@@ -67,6 +67,7 @@ function showCount(){
 }
 function getItemCount(){
 	//returns 0 if it doesn't exist
+	alert($.cookie());
 	return $.cookie().length;
 }
 function updatePanier(id, src){
