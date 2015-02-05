@@ -41,7 +41,7 @@
 </div>
 <section class="section_dark" style="color:white">
 	<fieldset>
-		<form methode="post">
+		<form methode="post" action="Recherche">
 			<ul class="inline-list">
 			    <li>
 				    <div class="row">
