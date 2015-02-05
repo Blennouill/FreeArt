@@ -22,7 +22,8 @@
 $(document).ready(function(){
 	if(are_cookies_enabled()){
 		//an image has to be  a child of this container
-		$('.addPanier').on('click', function(){
+		$('.addPanier').on('click', function(e){
+			e.preventDefault();
 			var img = $(this).children("img")
 			var imgSrc = $(img).attr('src');
 			var imgId = $(img).attr('id');
