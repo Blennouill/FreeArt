@@ -31,6 +31,7 @@ $(document).ready(function(){
 				//adding it as a cookie that expires in one day
 				$.cookie(imgId, imgSrc, { expires: 1 });
 				updatePanier(imgId, imgSrc);
+				showCount();
 			}
 		});
 		//delete all cookies and empty panier
