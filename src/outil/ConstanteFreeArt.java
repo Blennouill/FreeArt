@@ -28,7 +28,7 @@ public final class ConstanteFreeArt {
 	public static final String CONSTANTE_FORM_CHAMP_MDP = "MotDePasse";
 	
 	// Constante liés aux uploads
-	public static final String CONSTANTE_CHEMIN_UPLOAD = "/images/";
+	public static final String CONSTANTE_CHEMIN_UPLOAD = "images/";
 	public static final int CONSTANTE_TAILLE_TAMPON = 10240; // 10 ko
 	
 	// Constante message

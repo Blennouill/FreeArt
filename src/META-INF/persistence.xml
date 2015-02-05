@@ -3,8 +3,6 @@
 	<persistence-unit name="FreeArtDB">
 		<jta-data-source>FreeArtDB</jta-data-source>
 		<class>model.Image</class>
-		<class>model.Panier</class>
-		<class>model.PanierPK</class>
 		<class>model.Utilisateur</class>
 		<properties>
 	        <property name="javax.persistence.schema-generation.create-database-schemas" value="true"/>

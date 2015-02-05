@@ -23,7 +23,9 @@ import ejb.FacadeImage;
  */
 public class UploadService {
 	
-	public UploadService(){}
+	public UploadService(){
+		
+	}
 	
 	public boolean UploaderImage(FacadeImage fi, HttpServletRequest poRequest, String chemin) throws IOException, ServletException{
 		//Initisalisation des variables
@@ -32,6 +34,7 @@ public class UploadService {
 	    String tag = poRequest.getParameter("Tag");
 		Calendar calendar = Calendar.getInstance();
 	    Timestamp datePublication = new Timestamp(calendar.getTime().getTime());
+	    String prefixNomImage = Long.toString(datePublication.getTime());
 	    //Traitement de la fonction
 	    //Les données reçues sont multipart, on doit donc utiliser la méthode getPart() pour traiter le champ d'envoi de fichiers.
 	    Part part = poRequest.getPart("Upload");
@@ -54,7 +57,7 @@ public class UploadService {
 	        // Écriture du fichier sur le disque
             try {
             	// Concatenation du timestamp pour rendre chaque upload unique.
-            	chemin.concat(datePublication.toString());
+            	nomFichier = prefixNomImage+nomFichier;
     	        ecrireFichier(part, nomFichier, chemin);
     	        is.AjoutImage(fi, ConstanteFreeArt.CONSTANTE_CHEMIN_UPLOAD+nomFichier, datePublication, tag, nomImage, Utilitaire.U);
     	        return true;

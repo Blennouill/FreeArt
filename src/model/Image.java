@@ -42,10 +42,6 @@ public class Image implements Serializable {
 	@JoinColumn(name="CodeAuteur", nullable=false)
 	private Utilisateur utilisateur;
 
-	//bi-directional many-to-one association to Panier
-	@OneToMany(mappedBy="image")
-	private List<Panier> paniers;
-
 	public Image() {
 	}
 
@@ -96,27 +92,4 @@ public class Image implements Serializable {
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
-
-	public List<Panier> getPaniers() {
-		return this.paniers;
-	}
-
-	public void setPaniers(List<Panier> paniers) {
-		this.paniers = paniers;
-	}
-
-	public Panier addPanier(Panier panier) {
-		getPaniers().add(panier);
-		panier.setImage(this);
-
-		return panier;
-	}
-
-	public Panier removePanier(Panier panier) {
-		getPaniers().remove(panier);
-		panier.setImage(null);
-
-		return panier;
-	}
-
 }

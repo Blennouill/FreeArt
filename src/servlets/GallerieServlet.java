@@ -41,7 +41,6 @@ public class GallerieServlet extends HttpServlet {
      */
 	protected void doGet(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
 		// Declaration des variables
-		UtilisateurService us = new UtilisateurService();
 		ImageService is = new ImageService();
 		List<Image> ListeImages;
 		// Traitement de la fonction
@@ -55,8 +54,7 @@ public class GallerieServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest poRequest, HttpServletResponse poResponse)
 	 */
 	protected void doPost(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
-		//Declaration des variables
-		
+		this.doGet(poRequest, poResponse);	
 	}
 
 }
