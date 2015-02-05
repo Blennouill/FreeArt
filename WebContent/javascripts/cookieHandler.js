@@ -44,7 +44,7 @@ $(document).ready(function(){
 			$('#panierImgs').empty();
 			showCount();
 		});
-		$('.deleteImgCookie').on('click', function(){
+		$(document).on('click','.deleteImgCookie', function(){
 			var imgId = $(this).parent().children('img').prop('id');
 			var wasDeleted = $.removeCookie(imgId.split('_')[1]);
 			console.log('Was deleted: ' + wasDeleted);
