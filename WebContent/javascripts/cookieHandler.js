@@ -27,10 +27,11 @@ $(document).ready(function(){
 			var img = $(this).parent().parent().children("img")
 			var imgSrc = $(img).prop('src');
 			var imgId = $(img).prop('id');
-
-			//adding it as a cookie that expires in one day
-			$.cookie(imgId, imgSrc, { expires: 1 });
-			updatePanier(imgId, imgSrc);
+			if(! $.cookie(imgId)){
+				//adding it as a cookie that expires in one day
+				$.cookie(imgId, imgSrc, { expires: 1 });
+				updatePanier(imgId, imgSrc);
+			}
 		});
 		//delete all cookies and empty panier
 		$('#deleteAllImgCookies').on('click', function(){
@@ -72,7 +73,7 @@ function updatePanier(id, src){
 	var img = $('<img id="panier_' + id + '" class="panierImg">');
 	var div = $('<div class="img_in_panier"></div>');
 	//update img to remove
-	var del = $('<a href="#" class="deleteImgCookie"><span class="lsf-icon" title="remove"></span></a>');
+	var del = $('<button class="deleteImgCookie"><span class="lsf-icon" title="remove"></span></button>');
 	$(img).attr('src', src);
 	$([$(img), $(del)]).appendTo($(div));
 	$(div).appendTo($('#panierImgs'));
