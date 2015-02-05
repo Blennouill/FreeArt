@@ -5,11 +5,13 @@
 		<ul id="menu-header" class="nav-bar horizontal">
 			<li class="active"><a href="Accueil">Accueil</a></li>
 			<li class=""><a href="Gallerie">Gallerie</a></li>
-			<li class=""><a href="Inscription">Inscription</a></li>
+			<c:if test="${empty sessionScope.SessionUtilisateur}">
+				<li class=""><a href="Inscription">Inscription</a></li>
+			</c:if>
 		</ul>
 		<script type="text/javascript">
 		//<![CDATA[
-		$('ul#menu-header').nav-bar();
+			$('ul#menu-header').nav-bar();
 		 //]]>
 		</script>
 	</div>
@@ -30,10 +32,3 @@
    	</div>
 </div> 
 </nav>
-<script>
-$(document).ready(function(){
-	$('#aDeco').on('click', function(){
- 						$('#formDeco')[0].submit();
-	});
-});
- </script>

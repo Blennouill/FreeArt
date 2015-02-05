@@ -115,17 +115,13 @@ public class UtilisateurServlet extends HttpServlet {
 		//Traitement de la fonction
 		utilisateurCourant = loUtilisateurService.ConnexionUtilisateur(poRequest, facadeUtilisateur);
 		if (utilisateurCourant != null){
-	         /* Si aucune erreur de validation n'a eu lieu, alors ajout du bean
-	        	Utilisateur à la session, sinon suppression du bean de la session. */
-	        if ( loUtilisateurService.getErreurs().isEmpty() ){
-	            loSession.setAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR, utilisateurCourant);
-	        } else {
-	            loSession.setAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR, null);
-	        }
-	        Utilitaire.U = utilisateurCourant;
-	        return true;
+		    /* Si Utilisateur non vide, ajour à la session, sinon suppression du bean de la session. */
+		    loSession.setAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR, utilisateurCourant);
+		    Utilitaire.U = utilisateurCourant;
+		    return true;
 		}
 		else{
+			loSession.setAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR, null);
 			return false;
 		}
 	}
