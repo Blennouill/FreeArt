@@ -10,10 +10,10 @@
 			<div class="row">
 				<div>
 					<label>Nom de l'image</label>
-					<input type="text" placeholder="" name="NomImage">
+					<input type="text" placeholder="" name="NomImage" required>
 		   			<label>Tag de l'image </label>
-					<input type="text" placeholder="" name="Tag">
-		   			<input type="file" name="Upload"><br><br>
+					<input type="text" placeholder="" name="Tag" required>
+		   			<input type="file" name="Upload" required><br><br>
 		  			<input type="submit" class="round button" value="Choisir">
 		  		</div>
 			</div>
