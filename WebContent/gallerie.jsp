@@ -50,7 +50,7 @@
                 <h4><strong><c:out value="${image.nomImage}"/></strong></h4>
                 <p><span class="lsf-icon" title="tag"></span><c:out value="${image.tag}"/><br/>
                 <span class="lsf-icon" title="user"></span><c:out value="${image.utilisateur.nomUtilisateur}"/></br>
-                <a href ="Panier" class="addPanier lsf-icon" title="add"></a></p>
+                <a href ="#" class="addPanier lsf-icon" title="add"></a></p>
 			</div>
 		</c:forEach>
 		</div> <!-- end Masonry container -->
