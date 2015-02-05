@@ -1,6 +1,5 @@
 package service;
 
-import java.security.MessageDigest;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;

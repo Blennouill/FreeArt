@@ -84,7 +84,8 @@
 				<img id=<c:out value="${image.codeImage}"/> src=<c:out value="${image.chemin}"/> alt="desc"/>
                 <h4><strong><c:out value="${image.nomImage}"/></strong></h4>
                 <p><span class="lsf-icon" title="tag"></span><c:out value="${image.tag}"/><br/>
-                <span class="lsf-icon" title="user"></span><c:out value="${image.utilisateur.nomUtilisateur}"/></br>
+                <span class="lsf-icon" title="user"></span><c:out value="${image.utilisateur.nomUtilisateur}"/><br/>
+                <span class="lsf-icon" title="calender"></span><c:out value="${image.datePublication}"/><br/>
                 <a href ="#" class="addPanier lsf-icon" title="add"></a></p>
 			</div>
 		</c:forEach>
@@ -95,21 +96,22 @@
 <%@ include file="footer.jsp" %>
 <!-- ######################## Scripts ######################## --> 
 
-	<!-- Masonry for galleries -->
-	<script src="javascripts/masonry.js" type="text/javascript">
-	</script>
 	<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
 	<script type="text/javascript" src="javascripts/cookieHandler.js"></script>
-//<![CDATA[
-      $(function(){
-        var $container = $('#container');
-        $container.imagesLoaded( function(){
-          $container.masonry({
-            itemSelector : '.box',
-                        isFitWidth: true,
-                        isAnimated: true
-          });
-        });
-      });
-  //]]>
-  </script>
+	
+	<!-- Masonry for galleries -->
+	<script src="javascripts/masonry.js" type="text/javascript"></script>
+	<script>
+		//<![CDATA[
+		      $(function(){
+		        var $container = $('#container');
+		        $container.imagesLoaded( function(){
+		          $container.masonry({
+		            itemSelector : '.box',
+		                        isFitWidth: true,
+		                        isAnimated: true
+		          });
+		        });
+		      });
+		  //]]>
+	  </script>

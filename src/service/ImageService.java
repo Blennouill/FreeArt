@@ -1,6 +1,8 @@
 package service;
 
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,19 +18,8 @@ import ejb.FacadeImage;
  *
  */
 public class ImageService {
-
-	private String messageResultat;
-    private HashMap<String, String> listeErreurs = new HashMap<String, String>();
     
     public ImageService(){
-    }
-    
-    public String getResultat() {
-        return messageResultat;
-    }
-    
-    public HashMap<String, String> getErreurs() {
-        return listeErreurs;
     }
     
     /*public Image SauvegardeImage(HttpServletRequest poRequest) {
@@ -65,7 +56,7 @@ public class ImageService {
 	}
 	
 	/**
-	 * 
+	 * Renvoie
 	 * @param fi
 	 * @param tag
 	 * @return
@@ -82,15 +73,6 @@ public class ImageService {
 		return ListeImages;
 	}
 
-	/**
-	 * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-	 * @param pChamp
-	 * @param pMessage
-	 */
-    private void setErreur( String pChamp, String pMessage ) {
-        listeErreurs.put( pChamp, pMessage );
-    }
-
     /**
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
@@ -105,5 +87,18 @@ public class ImageService {
         } else {
             return valeur;
         }
+    }
+    
+    /**
+     * Change le format de la date pour l'affichage.
+     * @param i
+     * @return
+     */
+    private String ConvertDate(Image i) {
+    	//Declaration des varaibles
+    	DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+    	//Traitement de la fonction
+    	return format.format(i.getDatePublication());
+    	
     }
 }
