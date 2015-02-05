@@ -24,10 +24,10 @@ $(document).ready(function(){
 		//an image has to be  a child of this container
 		$('.addPanier').on('click', function(e){
 			e.preventDefault();
-			var img = $(this).children("img")
-			var imgSrc = $(img).attr('src');
-			var imgId = $(img).attr('id');
-
+			var img = $(this).parent().parent().children("img")
+			var imgSrc = $(img).prop('src');
+			var imgId = $(img).prop('id');
+			alert(imgId + ' ' + imgSrc);
 			//adding it as a cookie that expires in one day
 			$.cookie(imgId, imgSrc, { expires: 1 });
 			updateCount();
@@ -91,7 +91,7 @@ function updatePanier(id, src){
 	var img = $('<img id="panier_' + id + '" class="panierImg">');
 	var div = $('<div class="img_in_panier"></div>');
 	//update img to remove
-	var del = $('<a class="deleteImgCookie"><i class="fi-x"></i></a>');
+	var del = $('<a href="#" class="deleteImgCookie"><span class="lsf-icon" title="remove"></span></a>');
 	$(img).attr('src', src);
 	$([$(img), $(del)]).appendTo($(div));
 	$(div).appendTo($('#panierImgs'));
