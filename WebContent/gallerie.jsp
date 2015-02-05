@@ -46,19 +46,19 @@
 			    <li>
 				    <div class="row">
 					    <div class="large-12 columns">
-					      <label style="color:white">Chercher l'image par:
+					      <label style="color:white">Chercher des images par:
 					        <select>
-					          <option value="autor">Nom d'auteur</option>
-					          <option value="name">Son nom</option>
-					          <option value="tag">Son tag</option>
+					          <option value="autor">Leur auteur</option>
+					          <option value="name">Leur nom</option>
+					          <option value="tag">Leur tag</option>
 					        </select>
 					      </label>
 					    </div>
 				  	</div>
 					<div class="row">
 					    <div class="large-4 columns">
-					      <label style="color:white">Texte recherché:
-					        <input type="text" placeholder="Texte">
+					      <label style="color:white">Mot clé recherché:
+					        <input type="text" placeholder="Mot">
 					      </label>
 					    </div>
 					</div>
