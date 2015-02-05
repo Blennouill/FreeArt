@@ -57,7 +57,6 @@ $(document).ready(function(){
 		loadPanier();
 	}else{
 		alert('Vous devez autoriser les cookies pour que le panier fonctionne');
-		$('#itemCount').text('Autoriser les cookies pour ajouter des images aux panier !');
 	}
 	
 });
