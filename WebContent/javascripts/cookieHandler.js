@@ -62,9 +62,7 @@ $(document).ready(function(){
 });
 
 function showCount(){
-	var count = getItemCount();
-	var str = (count == 0) ? '': count + '';
-	$('#cartImg').text(str);	
+	$('.itemCount').text(getItemCount());	
 }
 function getItemCount(){
 	//returns 0 if it doesn't exist

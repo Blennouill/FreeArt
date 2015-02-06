@@ -2,9 +2,6 @@
 <%@ include file="header.jsp" %>
 
 <div id="imgPanierContainer">
-	<div>
-		<div id="itemCount"></div>
-	</div>
 	<div id="panierImgs">
 		<!-- example:
 			//class panierImg = affiche l'image en super petit pour quel puisse etre afficher dans le panier
@@ -13,7 +10,7 @@
 			 	<a class="deleteImgCookie">
 			 		<i class="fi-x"></i>
 			 	<a>
-			 </div> -->
+		 </div> -->
 	</div>
 	<a id="deleteAllImgCookies">Tout Supprimer</a>
 	<a href="#">Telecharge tout en .zip</a>
