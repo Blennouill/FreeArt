@@ -8,12 +8,23 @@ package outil;
 public class MEnumeration {
 	
 	/**
-	 * Enumeration de
+	 * 
 	 * @author KB
 	 *
 	 */
 	public enum ENUMTypeMessage{
 		AfficheSucces,
 		AfficheErreur
+	}
+	
+	/**
+	 * 
+	 * @author Pro
+	 *
+	 */
+	public enum ENUMTypeRecherche{
+		Tag,
+		Auteur,
+		NomImage
 	}
 }

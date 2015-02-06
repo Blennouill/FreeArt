@@ -54,7 +54,20 @@ public class GallerieServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest poRequest, HttpServletResponse poResponse)
 	 */
 	protected void doPost(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
-		this.doGet(poRequest, poResponse);	
+		//Declaration des variables
+		List<Image> ListeImages;
+		ImageService is = new ImageService();
+		String typeRecherche = poRequest.getParameter(ConstanteFreeArt.CONSTANTE_FORM_CHAMP_TYPERECHERCHE);
+		String valeurRecherche = poRequest.getParameter( ConstanteFreeArt.CONSTANTE_FORM_CHAMP_VALEURRECHERCHE);
+		//Traitement de la fonction
+		if (poRequest.getServletPath().compareTo("/Recherche") == 0){
+			ListeImages = is.RenvoyerListeImageRechercherParTypeRecherche(facadeImage, typeRecherche, valeurRecherche);
+			poRequest.setAttribute("ListeImages", ListeImages);
+			this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_GALLERIE).forward( poRequest, poResponse );
+		}
+		else {
+			this.doGet(poRequest, poResponse);		
+		}
 	}
 
 }

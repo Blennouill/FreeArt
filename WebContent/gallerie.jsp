@@ -30,10 +30,10 @@
 				    <div class="row">
 					    <div class="large-12 columns">
 					      <label style="color:white">Chercher des images par:
-					        <select>
-					          <option value="autor">Leur auteur</option>
-					          <option value="name">Leur nom</option>
-					          <option value="tag">Leur tag</option>
+					        <select name="ChoixSelect">
+					          <option value="Auteur">Leur auteur</option>
+					          <option value="NomImage">Leur nom</option>
+					          <option value="Tag">Leur tag</option>
 					        </select>
 					      </label>
 					    </div>
@@ -41,7 +41,7 @@
 					<div class="row">
 					    <div class="large-4 columns">
 					      <label style="color:white">Mot clé recherché:
-					        <input type="text" placeholder="Mot">
+					        <input type="text" placeholder="Mot" name="ValeurRecherche">
 					      </label>
 					    </div>
 					</div>

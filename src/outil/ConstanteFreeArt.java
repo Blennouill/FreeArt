@@ -27,6 +27,13 @@ public final class ConstanteFreeArt {
 	public static final String CONSTANTE_FORM_CHAMP_NOM = "NomUtilisateur";
 	public static final String CONSTANTE_FORM_CHAMP_MDP = "MotDePasse";
 	
+	// Constante liés à la recherche
+	public static final String CONSTANTE_FORM_AUTEUR = "Auteur";
+	public static final String CONSTANTE_FORM_CHAMP_NOMIMAGE = "NomImage";
+	public static final String CONSTANTE_FORM_CHAMP_TAG = "Tag";
+	public static final String CONSTANTE_FORM_CHAMP_TYPERECHERCHE = "ChoixSelect";
+	public static final String CONSTANTE_FORM_CHAMP_VALEURRECHERCHE = "ValeurRecherche";
+	
 	// Constante liés aux uploads
 	public static final String CONSTANTE_CHEMIN_UPLOAD = "images/";
 	public static final int CONSTANTE_TAILLE_TAMPON = 10240; // 10 ko

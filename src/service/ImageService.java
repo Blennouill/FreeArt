@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import outil.MEnumeration.ENUMTypeRecherche;
 import model.Image;
 import model.Utilisateur;
 import ejb.FacadeImage;
@@ -61,13 +62,24 @@ public class ImageService {
 	 * @param tag
 	 * @return
 	 */
-	public List<Image> RenvoyerListeImageRechercherParTag(FacadeImage fi, String tag){
+	public List<Image> RenvoyerListeImageRechercherParTypeRecherche(FacadeImage fi, String type, String valeur){
 		//Declaration des variables
 		List<Image> ListeImages = new ArrayList<Image>();
 		//Traitement de la fonction
 		for( Image i : ListeImages(fi)){
-			if (i.getTag() != tag){
-				ListeImages.add(i);
+			switch (type){
+				case "Auteur":
+					if (i.getUtilisateur().getNomUtilisateur().contains(valeur))
+						ListeImages.add(i);
+					break;
+				case "Tag":
+					if (i.getTag().contains(valeur))
+						ListeImages.add(i);
+					break;
+				case "NomImage":
+					if (i.getNomImage().contains(valeur))
+						ListeImages.add(i);
+					break;
 			}
 		}
 		return ListeImages;

@@ -20,6 +20,7 @@
   <servlet-mapping>
     <servlet-name>GallerieServlet</servlet-name>
     <url-pattern>/Gallerie/*</url-pattern>
+    <url-pattern>/Recherche/*</url-pattern>
   </servlet-mapping>
   
   <servlet>
