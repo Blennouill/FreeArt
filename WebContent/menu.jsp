@@ -26,7 +26,7 @@
 				<a href="Deconnexion" id="aDeco" class="dropcap_red lsf-icon-dropcap" title="logout"></a>
 			</c:when>
 			<c:otherwise>
-				<a href="Panier" class="dropcap_red lsf-icon-dropcap itemCount" title="cart"></p></a>
+				<a href="Panier" class="dropcap_red lsf-icon-dropcap itemCount" title="cart"></a>
 				<a href="Connexion" id="aCo" class="dropcap_red lsf-icon-dropcap" title="login"></a>
 			</c:otherwise>
 		</c:choose>

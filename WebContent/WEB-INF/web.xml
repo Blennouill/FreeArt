@@ -3,7 +3,6 @@
   <welcome-file-list>
     <welcome-file>accueil.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>AccueilServlet</servlet-name>
     <servlet-class>servlets.AccueilServlet</servlet-class>
@@ -12,7 +11,6 @@
     <servlet-name>AccueilServlet</servlet-name>
     <url-pattern>/Accueil/*</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GallerieServlet</servlet-name>
     <servlet-class>servlets.GallerieServlet</servlet-class>
@@ -22,26 +20,32 @@
     <url-pattern>/Gallerie/*</url-pattern>
     <url-pattern>/Recherche/*</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>UploadServlet</servlet-name>
     <servlet-class>servlets.UploadServlet</servlet-class>
     <init-param>
-		<param-name>Chemin</param-name> 
-		<param-value>D:/Privee/Projet/P52/Projet/App/WebContent/images/</param-value> 
-	</init-param>
+      <param-name>Chemin</param-name>
+      <param-value>D:/Privee/Projet/P52/Projet/App/WebContent/images/</param-value>
+    </init-param>
     <multipart-config>
-		<location>D:/Privee/Projet/P52/tmp</location>
-		<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
-		<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
-		<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
-	</multipart-config>
+      <location>D:/Privee/Projet/P52/tmp</location>
+      <max-file-size>10485760</max-file-size>
+      <max-request-size>52428800</max-request-size>
+      <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
   </servlet>
   <servlet-mapping>
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/Upload</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+	<servlet-name>DownloadServlet</servlet-name>
+	<servlet-class>servlets.DownloadServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>DownloadServlet</servlet-name>
+	<url-pattern>/Download/*</url-pattern>
+</servlet-mapping>
   <servlet>
     <servlet-name>UtilisateurServlet</servlet-name>
     <servlet-class>servlets.UtilisateurServlet</servlet-class>
@@ -52,7 +56,6 @@
     <url-pattern>/Inscription/*</url-pattern>
     <url-pattern>/Deconnexion/*</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>PanierServlet</servlet-name>
     <servlet-class>servlets.PanierServlet</servlet-class>
