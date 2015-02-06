@@ -12,8 +12,8 @@
 			 	<a>
 		 </div> -->
 	</div>
-	<button id="deleteAllImgCookies">Tout Supprimer</button>
-	<button id="download">Telecharge tout en .zip</button>
+	<a id="deleteAllImgCookies" class="dropcap_red lsf-icon-dropcap" title="delete">Tout Supprimer</a>
+	<a id="download" class="dropcap_red lsf-icon-dropcap" title="save">Telecharge tout en .zip</a>
 </div>
 <%@ include file="footer.jsp" %>
 <!-- ######################## Scripts ######################## --> 
