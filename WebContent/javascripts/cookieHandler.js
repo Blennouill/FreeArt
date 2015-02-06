@@ -36,14 +36,7 @@ $(document).ready(function(){
 		});
 		//delete all cookies and empty panier
 		$('#deleteAllImgCookies').on('click', function(){
-			var cookies = $.cookie();
-			//looping through all the cookies and deleting them
-			for(var cookie in cookies){
-				var wasDeleted = $.removeCookie(cookie);
-				console.log('Was deleted: ' + wasDeleted);
-			}
-			$('#panierImgs').empty();
-			showCount();
+			deleteAll();
 		});
 		$(document).on('click','.deleteImgCookie', function(){
 			var imgId = $(this).parent().children('img').prop('id');
@@ -56,6 +49,9 @@ $(document).ready(function(){
 		$('#download').on('click', function(){
 			download();
 		});
+		$('#aCo').on('click', function(){
+			deleteAll();
+		});
 		//initial load to fill the panier
 		loadPanier();
 	}else{
@@ -63,7 +59,16 @@ $(document).ready(function(){
 	}
 	
 });
-
+function deleteAll(){
+	var cookies = $.cookie();
+	//looping through all the cookies and deleting them
+	for(var cookie in cookies){
+		var wasDeleted = $.removeCookie(cookie);
+		console.log('Was deleted: ' + wasDeleted);
+	}
+	$('#panierImgs').empty();
+	showCount();
+}
 function showCount(){
 	$('.itemCount').text(getItemCount());	
 }
