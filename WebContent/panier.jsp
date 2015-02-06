@@ -17,9 +17,6 @@
 </div>
 <%@ include file="footer.jsp" %>
 <!-- ######################## Scripts ######################## --> 
-
-	<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
-	<script type="text/javascript" src="javascripts/cookieHandler.js"></script>
 	
 	<!-- Masonry for galleries -->
 	<script src="javascripts/masonry.js" type="text/javascript"></script>
