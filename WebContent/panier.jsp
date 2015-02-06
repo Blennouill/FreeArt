@@ -2,7 +2,7 @@
 <%@ include file="header.jsp" %>
 <div class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Download</h3></div></div></div><br>
 <div id="imgPanierContainer">
-	<div id="panierImgs class="row">
+	<div id="panierImgs" class="row">
 		<!-- example:
 			//class panierImg = affiche l'image en super petit pour quel puisse etre afficher dans le panier
 			 <div class="img_in_panier">
