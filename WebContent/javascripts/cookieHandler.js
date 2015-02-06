@@ -36,14 +36,7 @@ $(document).ready(function(){
 		});
 		//delete all cookies and empty panier
 		$('#deleteAllImgCookies').on('click', function(){
-			var cookies = $.cookie();
-			//looping through all the cookies and deleting them
-			for(var cookie in cookies){
-				var wasDeleted = $.removeCookie(cookie);
-				console.log('Was deleted: ' + wasDeleted);
-			}
-			$('#panierImgs').empty();
-			showCount();
+			deleteAll();
 		});
 		$(document).on('click','.deleteImgCookie', function(){
 			var imgId = $(this).parent().children('img').prop('id');
@@ -53,6 +46,12 @@ $(document).ready(function(){
 			$(this).parent().remove();
 			showCount();
 		});
+		$('#download').on('click', function(){
+			download();
+		});
+		$('#aCo').on('click', function(){
+			deleteAll();
+		});
 		//initial load to fill the panier
 		loadPanier();
 	}else{
@@ -60,7 +59,16 @@ $(document).ready(function(){
 	}
 	
 });
-
+function deleteAll(){
+	var cookies = $.cookie();
+	//looping through all the cookies and deleting them
+	for(var cookie in cookies){
+		var wasDeleted = $.removeCookie(cookie);
+		console.log('Was deleted: ' + wasDeleted);
+	}
+	$('#panierImgs').empty();
+	showCount();
+}
 function showCount(){
 	$('.itemCount').text(getItemCount());	
 }
@@ -79,13 +87,11 @@ function updatePanier(id, src){
 }
 function loadPanier(){
 	//checking to see if it exists
-	if($('#imgPanierContainer').length){
-		//looping through all the cookies
-		$.each($.cookie(), function(id, src){
-			updatePanier(id, src);
-		});
-		showCount();
-	}
+	//looping through all the cookies
+	$.each($.cookie(), function(id, src){
+		updatePanier(id, src);
+	});
+	showCount();
 }
 function are_cookies_enabled()
 {
@@ -97,4 +103,23 @@ function are_cookies_enabled()
         cookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
     }
     return (cookieEnabled);
+}
+
+function download(){
+	var list = [];
+	$.each($.cookie(), function(id, src){
+		list.push(src);
+	});
+	if(list.length > 0){
+		try{
+			var send = JSON.stringify(list);
+			$.fileDownload('/download/?string=' + send)
+			    .done(function () { alert('File download a success!'); })
+			    .fail(function () { alert('File download failed!'); });
+		}catch(e){
+			console.log("parsing error: " + e);
+		}
+	}else{
+		alert('Rien à télécharger, le panier est vide !');
+	}
 }

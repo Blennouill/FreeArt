@@ -6,7 +6,7 @@
 				<div class="twelve columns footer">
 					<img id="bk" src="images/FreeArt.png" style="opacity:0.7; border-radius:10px">
 					<div><br></div>
-		 			<h2>Copyright © 2014 Ettlinger, Faulhaber & Blenner</h2>
+		 			<h2>Copyright Â© 2014 Ettlinger, Faulhaber & Blenner</h2>
 		 		</div>
 	 		</div>
     </footer>
@@ -20,4 +20,5 @@
 	<script src="javascripts/app.js" type="text/javascript"></script>
 	
 	<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.fileDownload.js"></script>
 	<script type="text/javascript" src="javascripts/cookieHandler.js"></script>
