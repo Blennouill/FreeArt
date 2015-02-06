@@ -82,13 +82,11 @@ function updatePanier(id, src){
 }
 function loadPanier(){
 	//checking to see if it exists
-	if($('#imgPanierContainer').length){
-		//looping through all the cookies
-		$.each($.cookie(), function(id, src){
-			updatePanier(id, src);
-		});
-		showCount();
-	}
+	//looping through all the cookies
+	$.each($.cookie(), function(id, src){
+		updatePanier(id, src);
+	});
+	showCount();
 }
 function are_cookies_enabled()
 {
