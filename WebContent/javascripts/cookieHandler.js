@@ -105,12 +105,14 @@ function download(){
 	$.each($.cookie(), function(id, src){
 		list.push(src);
 	});
-	try{
-		var send = JSON.stringify(list);
-		$.fileDownload('/download/?string=' + send)
-		    .done(function () { alert('File download a success!'); })
-		    .fail(function () { alert('File download failed!'); });
-	}catch(e){
-		console.log("parsing error: " + e);
+	if(list.length > 0){
+		try{
+			var send = JSON.stringify(list);
+			$.fileDownload('/download/?string=' + send)
+			    .done(function () { alert('File download a success!'); })
+			    .fail(function () { alert('File download failed!'); });
+		}catch(e){
+			console.log("parsing error: " + e);
+		}
 	}
 }
