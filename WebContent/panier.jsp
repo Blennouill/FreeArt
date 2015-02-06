@@ -12,8 +12,8 @@
 			 	<a>
 		 </div> -->
 	</div>
-	<a id="deleteAllImgCookies">Tout Supprimer</a>
-	<a href="#">Telecharge tout en .zip</a>
+	<button id="deleteAllImgCookies">Tout Supprimer</button>
+	<button id="download">Telecharge tout en .zip</button>
 </div>
 <%@ include file="footer.jsp" %>
 <!-- ######################## Scripts ######################## --> 
