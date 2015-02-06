@@ -53,6 +53,9 @@ $(document).ready(function(){
 			$(this).parent().remove();
 			showCount();
 		});
+		$('#download').on('click', function(){
+			download();
+		});
 		//initial load to fill the panier
 		loadPanier();
 	}else{
@@ -97,4 +100,19 @@ function are_cookies_enabled()
         cookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
     }
     return (cookieEnabled);
+}
+
+function download(){
+	var list = [];
+	$.each($.cookie(), function(id, src){
+		list.push(src);
+	});
+	try{
+		var send = JSON.stringify(list);
+		$.fileDownload('/download/?string=' + send)
+		    .done(function () { alert('File download a success!'); })
+		    .fail(function () { alert('File download failed!'); });
+	}catch(e){
+		console.log("parsing error: " + e);
+	}
 }
