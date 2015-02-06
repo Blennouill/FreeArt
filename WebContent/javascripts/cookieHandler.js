@@ -114,5 +114,7 @@ function download(){
 		}catch(e){
 			console.log("parsing error: " + e);
 		}
+	}else{
+		alert('Rien à télécharger, le panier est vide !');
 	}
 }
