@@ -22,11 +22,11 @@
 			<c:when test="${!empty sessionScope.SessionUtilisateur}">
 				<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
 				<h4 class="succes">Bonjour ${sessionScope.SessionUtilisateur.nomUtilisateur} !</h4>	
-				<a href="Panier" id="cartImg" class="dropcap_red lsf-icon-dropcap" title="cart"></a>			
+				<a href="Panier" class="dropcap_red lsf-icon-dropcap itemCount" title="cart"></a>			
 				<a href="Deconnexion" id="aDeco" class="dropcap_red lsf-icon-dropcap" title="logout"></a>
 			</c:when>
 			<c:otherwise>
-				<a href="Panier" class="dropcap_red lsf-icon-dropcap" title="cart"></a>
+				<a href="Panier" class="dropcap_red lsf-icon-dropcap itemCount" title="cart"></a>
 				<a href="Connexion" id="aCo" class="dropcap_red lsf-icon-dropcap" title="login"></a>
 			</c:otherwise>
 		</c:choose>
