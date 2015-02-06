@@ -70,7 +70,7 @@ function getItemCount(){
 }
 function updatePanier(id, src){
 	var img = $('<img id="panier_' + id + '" class="panierImg">');
-	var div = $('<div class="img_in_panier"></div>');
+	var div = $('<div class="img_in_panier box photo col2"></div>');
 	//update img to remove
 	var del = $('<button class="deleteImgCookie"><span class="lsf-icon" title="remove"></span></button>');
 	$(img).attr('src', src);
