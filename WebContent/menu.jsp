@@ -21,7 +21,7 @@
 				<li class=""><a href="Inscription">Inscription</a></li>
 			</c:if>
 			<c:if test="${!empty sessionScope.SessionUtilisateur}">	
-				<li><a onclick="hide('hideme')">Upload</a></li>
+				<li><a href="#" onclick="hide('hideme')">Upload</a></li>
 			</c:if>
 		</ul>
 		<script type="text/javascript">
