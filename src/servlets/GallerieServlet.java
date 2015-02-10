@@ -42,7 +42,7 @@ public class GallerieServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest poRequest, HttpServletResponse poResponse) throws ServletException, IOException {
 		// Declaration des variables
 		ImageService is = new ImageService();
-		List<Image> ListeImages;
+		List<Image> ListeImages; 	
 		// Traitement de la fonction
 		// -> Chargement des images
 		ListeImages = is.ListeImages(facadeImage);

@@ -53,9 +53,10 @@ public class PanierService {
         //Traitement de la fonction
 	    try{  
 	        for(int i=0; i<listeURLImages.size(); i++){ 
-	            f = new File(zipDir, listeURLImages.get(i)); 
+	            f = new File(zipDir, listeURLImages.get(i));
+	            FileInputStream fis = new FileInputStream(f);
 	        }
-	        FileInputStream fis = new FileInputStream(zipDir); 
+	         
 	        ZipEntry anEntry = new ZipEntry(zipDir.getPath()); 
 	        
 	        //place the zip entry in the ZipOutputStream object 

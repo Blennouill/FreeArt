@@ -58,7 +58,7 @@ public class UploadServlet extends HttpServlet {
 			poRequest.setAttribute(ENUMTypeMessage.AfficheErreur.toString(), true);
 			poRequest.setAttribute(ConstanteFreeArt.CONSTANTE_OBJET_MESSAGE, m);
 	    }
-	    this.getServletContext().getRequestDispatcher("Gallerie").forward( poRequest, poResponse );
+	    this.getServletContext().getRequestDispatcher("/Gallerie").forward( poRequest, poResponse );
 	}
 	
 }

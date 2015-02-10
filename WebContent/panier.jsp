@@ -3,7 +3,7 @@
 
 <section class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Download</h3></div></div></div><br>
 	<a href="" id="deleteAllImgCookies" class="dropcap_red lsf-icon-dropcap" title="delete"></a>
-	<a href="" id="download" class="dropcap_red lsf-icon-dropcap" title="save"></a>
+	<a href="Download" id="download" class="dropcap_red lsf-icon-dropcap" title="save"></a>
 	<br>
 </section>
 <br>

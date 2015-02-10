@@ -25,7 +25,7 @@
     <servlet-class>servlets.UploadServlet</servlet-class>
     <init-param>
       <param-name>Chemin</param-name>
-      <param-value>D:/Privee/Projet/P52/Projet/App/WebContent/images/</param-value>
+      <param-value>D:/Privee/Projet/P52/Projet/App/FreeArt/WebContent/images/</param-value>
     </init-param>
     <multipart-config>
       <location>D:/Privee/Projet/P52/tmp</location>
@@ -53,7 +53,7 @@
     <servlet-class>servlets.PanierServlet</servlet-class>
     <init-param>
 		<param-name>Chemin</param-name> 
-		<param-value>D:/Privee/Projet/P52/Projet/App/WebContent/images/</param-value>
+		<param-value>D:/Privee/Projet/P52/Projet/App/FreeArt/WebContent/images/</param-value>
 	</init-param>
   </servlet>
   <servlet-mapping>
