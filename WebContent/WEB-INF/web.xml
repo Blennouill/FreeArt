@@ -39,14 +39,6 @@
     <url-pattern>/Upload</url-pattern>
   </servlet-mapping>
   <servlet>
-	<servlet-name>DownloadServlet</servlet-name>
-	<servlet-class>servlets.DownloadServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>DownloadServlet</servlet-name>
-	<url-pattern>/Download/*</url-pattern>
-</servlet-mapping>
-  <servlet>
     <servlet-name>UtilisateurServlet</servlet-name>
     <servlet-class>servlets.UtilisateurServlet</servlet-class>
   </servlet>
@@ -59,9 +51,14 @@
   <servlet>
     <servlet-name>PanierServlet</servlet-name>
     <servlet-class>servlets.PanierServlet</servlet-class>
+    <init-param>
+		<param-name>Chemin</param-name> 
+		<param-value>D:/Privee/Projet/P52/Projet/App/WebContent/images/</param-value>
+	</init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>PanierServlet</servlet-name>
     <url-pattern>/Panier/*</url-pattern>
+   	<url-pattern>/Download/*</url-pattern>
   </servlet-mapping>
 </web-app>
