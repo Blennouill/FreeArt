@@ -4,8 +4,9 @@
 <section class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Download</h3></div></div></div><br>
 	<a href="" id="deleteAllImgCookies" class="dropcap_red lsf-icon-dropcap" title="delete"></a>
 	<a href="" id="download" class="dropcap_red lsf-icon-dropcap" title="save"></a>
+	<br>
 </section>
-
+<br>
 <div id="imgPanierContainer">
 	<div id="panierImgs" class="row">
 		<!-- example:
@@ -18,6 +19,7 @@
 		 </div> -->
 	</div>
 </div>
+<br>
 <%@ include file="footer.jsp" %>
 <!-- ######################## Scripts ######################## --> 
 	
