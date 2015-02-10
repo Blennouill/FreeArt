@@ -3,16 +3,13 @@
 
 <script>
   function hide(obj) {
-
-    var el = document.getElementById(obj);
-    
-	if(el.style.hidden=='true') {
+		if($('#' + obj).is(":visible")) {
+				
+			$('#' + obj).hide("slow");
+		}
+		else $('#' + obj).show("slow");
 	
-		el.style.hidden = 'false';
 	}
-	else el.style.hidden = 'true';      
-
-    }
 </script>
 
 <div class="twelve columns header_nav_fullwidth">
@@ -22,8 +19,10 @@
 			<li class=""><a href="Gallerie">Gallerie</a></li>
 			<c:if test="${empty sessionScope.SessionUtilisateur}">
 				<li class=""><a href="Inscription">Inscription</a></li>
-			</c:if>	
+			</c:if>
+			<c:if test="${!empty sessionScope.SessionUtilisateur}">	
 				<li><a onclick="hide('hideme')">Upload</a></li>
+			</c:if>
 		</ul>
 		<script type="text/javascript">
 		//<![CDATA[
