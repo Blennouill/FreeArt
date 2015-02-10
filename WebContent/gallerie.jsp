@@ -22,7 +22,7 @@
 </header>
 </c:if>
 
-<section class="section_dark" style="color:white">
+<section id="hideme" class="section_dark" style="color:white">
 	<fieldset>
 		<form method="post" action="Recherche">
 			<ul class="inline-list">

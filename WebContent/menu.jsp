@@ -1,5 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav>
+
+<script>
+  function hide(obj) {
+
+    var el = document.getElementById(obj);
+    
+	if(el.style.hidden=='true') {
+	
+		el.style.hidden = 'false';
+	}
+	else el.style.hidden = 'true';      
+
+    }
+</script>
+
 <div class="twelve columns header_nav_fullwidth">
 	<div class="five columns" style="padding-top:8px">
 		<ul id="menu-header" class="nav-bar horizontal">
@@ -8,6 +23,9 @@
 			<c:if test="${empty sessionScope.SessionUtilisateur}">
 				<li class=""><a href="Inscription">Inscription</a></li>
 			</c:if>
+			<c:when test="${!empty sessionScope.SessionUtilisateur}">		
+				<li><a onlick="hide('hideme')">Upload</a></li>
+			</c:when>
 		</ul>
 		<script type="text/javascript">
 		//<![CDATA[
