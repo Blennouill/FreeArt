@@ -113,7 +113,7 @@ function download(){
 	if(list.length > 0){
 		try{
 			var send = JSON.parse(list);
-			$.post('/download/', { urls: send }, function(data){
+			$.post('/Download/', { urls: send }, function(data){
 				$('#downloadZip').attr('href', data);
 			});
 		}catch(e){
