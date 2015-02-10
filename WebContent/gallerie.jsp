@@ -3,7 +3,7 @@
 
 <!-- ######################## Corps ######################## --> 
 <c:if test="${!empty sessionScope.SessionUtilisateur}">
-<header id="hideme" hidden="true" style="padding-top: 0px;>
+<header id="hideme" hidden="true" style="padding-top: 0px">
 <div class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Upload</h3></div></div></div><br>
 	<form method="post" action="Upload" enctype="multipart/form-data">
 		<div class="row">
