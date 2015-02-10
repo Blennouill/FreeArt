@@ -22,10 +22,8 @@
 			<li class=""><a href="Gallerie">Gallerie</a></li>
 			<c:if test="${empty sessionScope.SessionUtilisateur}">
 				<li class=""><a href="Inscription">Inscription</a></li>
-			</c:if>
-			<c:when test="${!empty sessionScope.SessionUtilisateur}">		
-				<li><a onlick="hide('hideme')">Upload</a></li>
-			</c:when>
+			</c:if>	
+				<li><a onclick="hide('hideme')">Upload</a></li>
 		</ul>
 		<script type="text/javascript">
 		//<![CDATA[
