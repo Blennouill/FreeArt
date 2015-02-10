@@ -11,13 +11,16 @@
 		</ul>
 		<script type="text/javascript">
 		//<![CDATA[
+		function main(){
 			$('ul#menu-header').nav-bar();
+		}
+		window.onload = main;
 		 //]]>
 		</script>
 	</div>
 	<div class="two columns">
 	<br>
-		<%-- Vérification de la présence d'un objet utilisateur en session --%>
+		<%-- VÃ©rification de la prÃ©sence d'un objet utilisateur en session --%>
 		<c:choose>
 			<c:when test="${!empty sessionScope.SessionUtilisateur}">
 				<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
