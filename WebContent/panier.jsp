@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp" %>
-<section class="section_light"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Download</h3></div></div></div><br>
+<section class="section_dark"><div class="row"><div class="three columns centered" style="text-align: center"><h3 style="color:white">Download</h3></div></div></div><br>
 <div id="imgPanierContainer">
 	<div id="panierImgs" class="row">
 		<!-- example:
