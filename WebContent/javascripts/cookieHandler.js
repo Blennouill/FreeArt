@@ -112,10 +112,10 @@ function download(){
 	});
 	if(list.length > 0){
 		try{
-			var send = JSON.stringify(list);
-			$.fileDownload('/download/?string=' + send)
-			    .done(function () { alert('File download a success!'); })
-			    .fail(function () { alert('File download failed!'); });
+			var send = JSON.parse(list);
+			$.post('/download/', { urls: send }, function(data){
+				$('#downloadZip').attr('href', data);
+			});
 		}catch(e){
 			console.log("parsing error: " + e);
 		}
