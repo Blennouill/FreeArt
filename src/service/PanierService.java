@@ -56,7 +56,7 @@ public class PanierService {
 	            f = new File(zipDir, listeURLImages.get(i));
 	            FileInputStream fis = new FileInputStream(f);
 	         
-		        ZipEntry anEntry = new ZipEntry(zipDir.getPath()); 
+		        ZipEntry anEntry = new ZipEntry(listeURLImages.get(i)); 
 		        
 		        //place the zip entry in the ZipOutputStream object 
 		        zos.putNextEntry(anEntry); 
