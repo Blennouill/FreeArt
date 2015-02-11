@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import outil.ConstanteFreeArt;
 import outil.Message;
 import outil.MEnumeration.ENUMTypeMessage;
-import outil.Utilitaire;
 import service.PanierService;
 
 /**
@@ -46,7 +45,7 @@ public class PanierServlet extends HttpServlet {
 		if (c.length<2 || poRequest.getServletPath().compareTo("/Download") != 0) this.getServletContext().getRequestDispatcher(ConstanteFreeArt.CONSTANTE_CHEMIN_VUE_PANIER).forward(poRequest, poResponse );
 		//Traitement de la fonction
 		for(Cookie cookie : c){
-			if (cookie.getName() != "JSESSIONID"){
+			if (!cookie.getName().equalsIgnoreCase("JSESSIONID")){
 		    	temp = cookie.getValue().split("%2F");
 		    	ListeImages.add(temp[temp.length-1].toString());
 			}
@@ -74,7 +73,7 @@ public class PanierServlet extends HttpServlet {
 		poResponse.reset();
 		poResponse.setBufferSize(ConstanteFreeArt.CONSTANTE_TAILLE_TAMPON);
 		poResponse.setContentType(typeFichier);
-		poResponse.setHeader( "Content-Disposition", "attachment; filename=\"" + "FreeArtPackImage" + "\"" );
+		poResponse.setHeader( "Content-Disposition", "attachment; filename=\"" + "FreeArtPackImage.zip" + "\"" );
 		ps.DownloadImages(poResponse, cheminTmp, listeURLImages);
 		m = new Message(ENUMTypeMessage.AfficheSucces.toString(), ConstanteFreeArt.CONSTANTE_SUCCES_TELECHARGEMENT);
 		poRequest.setAttribute(ENUMTypeMessage.AfficheSucces.toString(), true);

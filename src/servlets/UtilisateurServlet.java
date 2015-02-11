@@ -14,7 +14,6 @@ import model.Utilisateur;
 import outil.ConstanteFreeArt;
 import outil.MEnumeration.ENUMTypeMessage;
 import outil.Message;
-import outil.Utilitaire;
 import service.UtilisateurService;
 import ejb.FacadeUtilisateur;
 
@@ -117,7 +116,6 @@ public class UtilisateurServlet extends HttpServlet {
 		if (utilisateurCourant != null){
 		    /* Si Utilisateur non vide, ajour à la session, sinon suppression du bean de la session. */
 		    loSession.setAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR, utilisateurCourant);
-		    Utilitaire.U = utilisateurCourant;
 		    return true;
 		}
 		else{
@@ -158,7 +156,6 @@ public class UtilisateurServlet extends HttpServlet {
 		// Initialisation ds variables
 		loSession = poRequest.getSession();
 		loSession.removeAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR);
-		Utilitaire.U = null;
 		return true;
 	}
 }

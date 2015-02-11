@@ -12,8 +12,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
+import model.Utilisateur;
 import outil.ConstanteFreeArt;
-import outil.Utilitaire;
 import ejb.FacadeImage;
 
 /**
@@ -59,7 +59,7 @@ public class UploadService {
             	// Concatenation du timestamp pour rendre chaque upload unique.
             	nomFichier = prefixNomImage+nomFichier;
     	        ecrireFichier(part, nomFichier, chemin);
-    	        is.AjoutImage(fi, ConstanteFreeArt.CONSTANTE_CHEMIN_UPLOAD+nomFichier, datePublication, tag, nomImage, Utilitaire.U);
+    	        is.AjoutImage(fi, ConstanteFreeArt.CONSTANTE_CHEMIN_UPLOAD+nomFichier, datePublication, tag, nomImage, (Utilisateur)poRequest.getSession().getAttribute(ConstanteFreeArt.CONSTANTE_SESSION_UTILISATEUR));
     	        return true;
             } 
             catch (Exception e) {

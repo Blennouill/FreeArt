@@ -55,19 +55,19 @@ public class PanierService {
 	        for(int i=0; i<listeURLImages.size(); i++){ 
 	            f = new File(zipDir, listeURLImages.get(i));
 	            FileInputStream fis = new FileInputStream(f);
-	        }
 	         
-	        ZipEntry anEntry = new ZipEntry(zipDir.getPath()); 
-	        
-	        //place the zip entry in the ZipOutputStream object 
-	        zos.putNextEntry(anEntry); 
-	        
-	        //now write the content of the file to the ZipOutputStream 
-	        while((bytesIn = fis.read(readBuffer)) != -1){ 
-	            zos.write(readBuffer, 0, bytesIn); 
-	        } 
-	        //close the Stream 
-	        fis.close(); 
+		        ZipEntry anEntry = new ZipEntry(zipDir.getPath()); 
+		        
+		        //place the zip entry in the ZipOutputStream object 
+		        zos.putNextEntry(anEntry); 
+		        
+		        //now write the content of the file to the ZipOutputStream 
+		        while((bytesIn = fis.read(readBuffer)) != -1){ 
+		            zos.write(readBuffer, 0, bytesIn); 
+		        } 
+		        //close the Stream 
+		        fis.close();
+	        }
 	    }
 	    catch(Exception e) { 
 	        e.printStackTrace(); 
